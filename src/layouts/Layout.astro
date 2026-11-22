@@ -1,0 +1,58 @@
+---
+import '@fontsource-variable/montserrat';
+import '@fontsource-variable/dm-sans';
+import '@fontsource-variable/inter';
+import '@fontsource-variable/space-grotesk';
+import '@fontsource-variable/manrope';
+import '@fontsource-variable/nunito-sans';
+// Every page's CSS is loaded on every page: Barba swaps only <main>,
+// so per-page <head> styles would be missing after a transition.
+import '../styles/base.css';
+import '../styles/nav.css';
+import '../styles/home.css';
+import '../styles/projects.css';
+import '../styles/casestudy.css';
+import '../styles/widgets.css';
+import Nav from '../components/Nav.astro';
+import Widgets from '../components/Widgets.astro';
+
+interface Props {
+  title: string;
+  namespace: 'home' | 'projects' | 'detail';
+  description?: string;
+}
+const {
+  title,
+  namespace,
+  description = 'Portfolio of Rizal Jamalul Lail (LLAMAAAJ): graphic design, UI/UX, video, games and websites.',
+} = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:type" content="website" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <script is:inline>
+      document.documentElement.classList.add('js');
+    </script>
+  </head>
+  <body>
+    <Nav />
+    <div data-barba="wrapper">
+      <main data-barba="container" data-barba-namespace={namespace}>
+        <slot />
+      </main>
+    </div>
+    <Widgets />
+    <script>
+      import '../scripts/main';
+    </script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import { folders, projects } from '../../data/site';
+import { scribbles } from '../../data/scribble';
+
+const groups = folders.map((f) => ({ ...f, items: projects.filter((p) => p.folder === f.id) }));
+const loops = scribbles(6);
+---
+
+<Layout title="Projects — LLAMAAAJ" namespace="projects">
+  <section class="pj" data-pj>
+    <h1 class="sr-only">Projects</h1>
+
+    <div class="pj__folders" role="group" aria-label="Project folders">
+      {
+        groups.map((g) => (
+          <button class="folder" type="button" data-folder={g.id} aria-pressed="false" aria-controls="pj-stage">
+            <span class="folder__art">
+              <img class="folder__img" src={g.icon} alt="" width="357" height="262" draggable="false" />
+              <svg class="scribble" viewBox="0 0 448 360" aria-hidden="true" focusable="false">
+                {loops.map((d) => (
+                  <path pathLength="1" d={d} />
+                ))}
+              </svg>
+            </span>
+            <span class="folder__label">{g.label}</span>
+          </button>
+        ))
+      }
+    </div>
+
+    <div class="pj__stage" id="pj-stage" data-stage hidden>
+      {
+        groups.map((g) => (
+          <div
+            class="pj__carousel"
+            data-carousel={g.id}
+            tabindex="0"
+            aria-roledescription="carousel"
+            aria-label={`${g.label} projects. Use the arrow keys to browse.`}
+            hidden
+          >
+            <div class="pj__track" data-track>
+              {g.items.length
+                ? g.items.map((p) => (
+                    <a class="card" href={`/projects/${p.slug}`} data-title={p.title} data-desc={p.description}>
+                      <img src={p.cover} alt={p.coverAlt} width="1600" height="900" draggable="false" />
+                    </a>
+                  ))
+                : [1, 2, 3].map((n) => (
+                    <div
+                      class="card card--placeholder"
+                      data-title={`${g.label} — Project ${n}`}
+                      data-desc="PLACEHOLDER: project coming soon."
+                    >
+                      Coming soon
+                    </div>
+                  ))}
+            </div>
+          </div>
+        ))
+      }
+      <div class="pj__progress" aria-hidden="true"><span class="pj__progress-fill" data-progress></span></div>
+      <div class="pj__caption" aria-live="polite">
+        <p class="pj__title" data-cap-title></p>
+        <p class="pj__desc" data-cap-desc></p>
+      </div>
+    </div>
+  </section>
+</Layout>

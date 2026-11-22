@@ -1,0 +1,35 @@
+---
+import { contact, resumeHref } from '../data/site';
+---
+
+<header class="nav" data-nav>
+  <nav class="nav__inner" aria-label="Main">
+    <a class="nav__logo" href="/" aria-label="LLAMAAAJ, home">
+      <img src="/logo.svg" alt="" width="212" height="64" />
+    </a>
+    <a class="nav__item" href="/projects" data-nav-path="/projects">
+      <span class="nav__label" data-text="Projects">Projects</span>
+    </a>
+    <a class="nav__item" href={resumeHref} target="_blank" rel="noopener">
+      <span class="nav__label" data-text="Resume">Resume</span>
+    </a>
+    <div class="nav__dd" data-dd>
+      <button class="nav__item" type="button" aria-expanded="false" aria-controls="callme-panel" data-dd-btn>
+        <span class="nav__label" data-text="Call me">Call me</span>
+        <span class="nav__dot" aria-hidden="true"></span>
+      </button>
+      <ul class="nav__panel" id="callme-panel">
+        {
+          contact.map((c) => (
+            <li>
+              <a class="nav__link" href={c.href} target="_blank" rel="noopener">
+                <b>{c.label}</b>
+                <span>{c.value}</span>
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </div>
+  </nav>
+</header>

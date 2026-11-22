@@ -1,0 +1,88 @@
+---
+// Detail page for a System project (content from the old portfolio).
+import type { SystemDetail } from '../data/site';
+
+const { s } = Astro.props as { s: SystemDetail };
+
+// "Title: description" -> [title, description]
+const highlights = s.highlights.map((h) => {
+  const i = h.indexOf(':');
+  return i > 0 ? [h.slice(0, i), h.slice(i + 1).trim()] : ['', h];
+});
+// the old site reused some screenshots under several captions; show each image once
+const gallery = s.gallery.filter((g, i, all) => all.findIndex((x) => x.url === g.url) === i);
+const liveLabel = s.liveUrl.includes('instagram.com')
+  ? 'View on Instagram'
+  : s.liveUrl.includes('github.com')
+    ? 'View on GitHub'
+    : 'Open live site';
+---
+
+<section class="cs-wrap sy-meta" data-reveal>
+  <dl class="sy-facts">
+    <div><dt>Year</dt><dd>{s.year}</dd></div>
+    <div><dt>Client</dt><dd>{s.client}</dd></div>
+    <div><dt>Role</dt><dd>{s.role}</dd></div>
+    <div><dt>Tools</dt><dd>{s.tools.join(' · ')}</dd></div>
+  </dl>
+  <a class="sy-live" href={s.liveUrl} target="_blank" rel="noopener">{liveLabel} ↗</a>
+</section>
+
+<figure class="sy-cover" data-reveal>
+  <img src={s.cover} alt={`${s.title} preview`} fetchpriority="high" />
+</figure>
+
+<section class="cs-sec">
+  <div class="cs-wrap sy-story" data-reveal>
+    <h2 class="sy-label">Overview</h2>
+    <div class="sy-rule"></div>
+    <div class="sy-text">
+      <p>{s.overview}</p>
+      <p>{s.challenge}</p>
+      <p>{s.solution}</p>
+    </div>
+  </div>
+</section>
+
+<section class="cs-sec cs-sec--dark">
+  <div class="cs-wrap">
+    <h2 class="cs-h2" data-reveal>Highlights</h2>
+    <ol class="sy-highlights">
+      {
+        highlights.map(([t, d], i) => (
+          <li data-reveal>
+            <span class="sy-num">{String(i + 1).padStart(2, '0')}</span>
+            {t && <h3>{t}</h3>}
+            <p>{d}</p>
+          </li>
+        ))
+      }
+    </ol>
+    <dl class="sy-metrics">
+      {
+        s.metrics.map((m) => (
+          <div data-reveal>
+            <dd>{m.value}</dd>
+            <dt>{m.label}</dt>
+          </div>
+        ))
+      }
+    </dl>
+  </div>
+</section>
+
+<section class="cs-sec">
+  <div class="cs-wrap">
+    <h2 class="cs-h2" data-reveal>Gallery</h2>
+    <div class="sy-gallery">
+      {
+        gallery.map((g) => (
+          <figure data-reveal>
+            <img src={g.url} alt={g.caption} loading="lazy" />
+            <figcaption>{g.caption}</figcaption>
+          </figure>
+        ))
+      }
+    </div>
+  </div>
+</section>

@@ -1,0 +1,429 @@
+[
+  {
+    "id": "design-system",
+    "title": "Design System",
+    "dark": false,
+    "single": true,
+    "tall": false,
+    "images": [
+      {
+        "src": "/projects/festika-8/design-system-01.webp",
+        "alt": "Festika 8 — Festika 8 design system: color palettes for Malam Puncak, Lomba and Seminar",
+        "w": 1534,
+        "h": 1172
+      }
+    ]
+  },
+  {
+    "id": "instagram",
+    "title": "Instagram Carousel",
+    "dark": false,
+    "single": false,
+    "tall": true,
+    "images": [
+      {
+        "src": "/projects/festika-8/instagram-01.webp",
+        "alt": "Festika 8 — Instagram carousel: Lomba x SESC, Festika Celebrate, Seminar Explore and coming soon",
+        "w": 894,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/instagram-02.webp",
+        "alt": "Festika 8 — Instagram carousel: Festika 8 Explore tickets, bundle package and location",
+        "w": 894,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/instagram-03.webp",
+        "alt": "Festika 8 — Instagram carousel: Maskot Festika #8, Aetheron",
+        "w": 894,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/instagram-04.webp",
+        "alt": "Festika 8 — Instagram carousel: Festika #8 Compete open registration",
+        "w": 894,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/instagram-05.webp",
+        "alt": "Festika 8 — Instagram carousel: Festika 8 x SESC e-sport promo",
+        "w": 670,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/instagram-06.webp",
+        "alt": "Festika 8 — Instagram carousel: Festika Compete e-sport offline tournament timeline",
+        "w": 2400,
+        "h": 1074
+      },
+      {
+        "src": "/projects/festika-8/instagram-07.webp",
+        "alt": "Festika 8 — Instagram carousel: Festika #8 News recap",
+        "w": 670,
+        "h": 1200
+      }
+    ]
+  },
+  {
+    "id": "pitch-decks",
+    "title": "Pitch Decks",
+    "dark": true,
+    "single": false,
+    "tall": false,
+    "images": [
+      {
+        "src": "/projects/festika-8/pitch-decks-01.webp",
+        "alt": "Festika 8 — Pitch deck, slide 1",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-02.webp",
+        "alt": "Festika 8 — Pitch deck, slide 2",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-03.webp",
+        "alt": "Festika 8 — Pitch deck, slide 3",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-04.webp",
+        "alt": "Festika 8 — Pitch deck, slide 4",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-05.webp",
+        "alt": "Festika 8 — Pitch deck, slide 5",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-06.webp",
+        "alt": "Festika 8 — Pitch deck, slide 6",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-07.webp",
+        "alt": "Festika 8 — Pitch deck, slide 7",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-08.webp",
+        "alt": "Festika 8 — Pitch deck, slide 8",
+        "w": 1920,
+        "h": 1080
+      },
+      {
+        "src": "/projects/festika-8/pitch-decks-09.webp",
+        "alt": "Festika 8 — Pitch deck, slide 9",
+        "w": 1920,
+        "h": 1080
+      }
+    ]
+  },
+  {
+    "id": "posters",
+    "title": "Informational Posters",
+    "dark": false,
+    "single": false,
+    "tall": true,
+    "images": [
+      {
+        "src": "/projects/festika-8/posters-01.webp",
+        "alt": "Festika 8 — Poster: Festika #8 Explore seminar",
+        "w": 759,
+        "h": 1074
+      },
+      {
+        "src": "/projects/festika-8/posters-02.webp",
+        "alt": "Festika 8 — Poster: Festika Celebrate concert",
+        "w": 759,
+        "h": 1074
+      },
+      {
+        "src": "/projects/festika-8/posters-03.webp",
+        "alt": "Festika 8 — Poster: Festika 8 Akademik open registration",
+        "w": 849,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/posters-04.webp",
+        "alt": "Festika 8 — Poster: Festika 8 x SESC e-sport open registration",
+        "w": 849,
+        "h": 1200
+      }
+    ]
+  },
+  {
+    "id": "certificates",
+    "title": "Certificates",
+    "dark": false,
+    "single": false,
+    "tall": false,
+    "images": [
+      {
+        "src": "/projects/festika-8/certificates-01.webp",
+        "alt": "Festika 8 — Participant certificate, light version",
+        "w": 1674,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-02.webp",
+        "alt": "Festika 8 — Participant certificate, dark version",
+        "w": 1674,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-03.webp",
+        "alt": "Festika 8 — Winner certificate: Free Fire",
+        "w": 1698,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-04.webp",
+        "alt": "Festika 8 — Winner certificate: Photography",
+        "w": 1698,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-05.webp",
+        "alt": "Festika 8 — Winner certificate: Mobile Legends",
+        "w": 1698,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-06.webp",
+        "alt": "Festika 8 — Winner certificate: Tekken 8",
+        "w": 1698,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-07.webp",
+        "alt": "Festika 8 — Winner certificate: UI/UX",
+        "w": 1698,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/certificates-08.webp",
+        "alt": "Festika 8 — Winner certificate: Valorant",
+        "w": 1698,
+        "h": 1200
+      }
+    ]
+  },
+  {
+    "id": "merchandise",
+    "title": "Merchandise",
+    "dark": false,
+    "single": false,
+    "tall": true,
+    "images": [
+      {
+        "src": "/projects/festika-8/merchandise-01.webp",
+        "alt": "Festika 8 — Acrylic keychain: Festika #8",
+        "w": 1200,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/merchandise-02.webp",
+        "alt": "Festika 8 — Acrylic keychain: To The Stars",
+        "w": 1200,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/merchandise-03.webp",
+        "alt": "Festika 8 — Tote bag option 1, black",
+        "w": 1007,
+        "h": 1007
+      },
+      {
+        "src": "/projects/festika-8/merchandise-04.webp",
+        "alt": "Festika 8 — Tote bag option 1, cream",
+        "w": 1007,
+        "h": 1007
+      },
+      {
+        "src": "/projects/festika-8/merchandise-05.webp",
+        "alt": "Festika 8 — Tote bag option 2, black",
+        "w": 1200,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/merchandise-06.webp",
+        "alt": "Festika 8 — Tote bag option 2, cream",
+        "w": 1200,
+        "h": 1200
+      }
+    ]
+  },
+  {
+    "id": "mascots",
+    "title": "Mascots",
+    "dark": true,
+    "single": false,
+    "tall": true,
+    "images": [
+      {
+        "src": "/projects/festika-8/mascots-01.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 1",
+        "w": 725,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-02.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 2",
+        "w": 725,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-03.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 3",
+        "w": 725,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-04.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 4",
+        "w": 656,
+        "h": 776
+      },
+      {
+        "src": "/projects/festika-8/mascots-05.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 5",
+        "w": 677,
+        "h": 776
+      },
+      {
+        "src": "/projects/festika-8/mascots-06.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 6",
+        "w": 734,
+        "h": 776
+      },
+      {
+        "src": "/projects/festika-8/mascots-07.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 7",
+        "w": 765,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-08.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 8",
+        "w": 715,
+        "h": 839
+      },
+      {
+        "src": "/projects/festika-8/mascots-09.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 9",
+        "w": 729,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-10.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 10",
+        "w": 758,
+        "h": 857
+      },
+      {
+        "src": "/projects/festika-8/mascots-11.webp",
+        "alt": "Festika 8 — Aetheron mascot, pose 11",
+        "w": 725,
+        "h": 857
+      }
+    ]
+  },
+  {
+    "id": "others",
+    "title": "Others",
+    "dark": false,
+    "single": false,
+    "tall": true,
+    "images": [
+      {
+        "src": "/projects/festika-8/others-01.webp",
+        "alt": "Festika 8 — Basement map layout",
+        "w": 948,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-02.webp",
+        "alt": "Festika 8 — Guidebook pages",
+        "w": 856,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-03.webp",
+        "alt": "Festika 8 — Sponsorship proposal pages",
+        "w": 858,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-04.webp",
+        "alt": "Festika 8 — Banner gate: Festika #8 x HUT STIBAJRA",
+        "w": 2400,
+        "h": 300
+      },
+      {
+        "src": "/projects/festika-8/others-05.webp",
+        "alt": "Festika 8 — All-access committee ID card",
+        "w": 759,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-06.webp",
+        "alt": "Festika 8 — All-access committee ID card, second design",
+        "w": 759,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-07.webp",
+        "alt": "Festika 8 — Committee division name tags",
+        "w": 1157,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-08.webp",
+        "alt": "Festika 8 — Ticket tier cards",
+        "w": 1203,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-09.webp",
+        "alt": "Festika 8 — T-shirt design sheet, cream",
+        "w": 2400,
+        "h": 1087
+      },
+      {
+        "src": "/projects/festika-8/others-10.webp",
+        "alt": "Festika 8 — T-shirt design sheet, white",
+        "w": 2400,
+        "h": 1095
+      },
+      {
+        "src": "/projects/festika-8/others-11.webp",
+        "alt": "Festika 8 — T-shirt design sheet, red",
+        "w": 1602,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-12.webp",
+        "alt": "Festika 8 — T-shirt and jersey mockups",
+        "w": 1165,
+        "h": 1200
+      },
+      {
+        "src": "/projects/festika-8/others-13.webp",
+        "alt": "Festika 8 — Sponsor stage backdrop",
+        "w": 1600,
+        "h": 1200
+      }
+    ],
+    "grid": true
+  }
+]

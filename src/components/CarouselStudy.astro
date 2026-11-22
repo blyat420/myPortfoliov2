@@ -1,0 +1,27 @@
+---
+// Detail page for the Instagram Carousel – Game News project.
+import { gameNewsPosts, gameNewsSlides } from '../data/gamenews';
+---
+
+{
+  gameNewsPosts.map((p) => (
+    <section class={`cr-post${p.dark ? ' cr-post--dark' : ''}`} style={`--cr-bg:${p.bg}`}>
+      <div class="cr-wrap">
+        <h2 class="cr-title" data-reveal>
+          Post {p.n} - {p.title}
+        </h2>
+        <p class="cr-desc" data-reveal>
+          {p.desc}
+        </p>
+        <div class="cr-slides" data-reveal>
+          {gameNewsSlides(p).map((s) => (
+            <img src={s.src} alt={s.alt} width="1080" height="1350" loading="lazy" />
+          ))}
+        </div>
+        <a class="cr-link" href={p.link} target="_blank" rel="noopener">
+          Post LINK
+        </a>
+      </div>
+    </section>
+  ))
+}

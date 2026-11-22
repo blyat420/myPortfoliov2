@@ -1,0 +1,189 @@
+/* Projects: folder picker -> folder opens a 16:9 carousel */
+
+.pj {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100svh;
+  overflow: hidden;
+  overflow: clip; /* clip can't be scrolled by focus/scrollIntoView */
+  padding-bottom: 4rem;
+}
+
+.pj__folders {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 6rem;
+  padding-top: 19.15rem;
+}
+
+.folder {
+  position: relative;
+  display: block;
+}
+.folder__art {
+  position: relative;
+  display: block;
+  width: 17.5rem;
+  aspect-ratio: 357 / 262;
+}
+.folder__img {
+  width: 100%;
+  height: 100%;
+  transition: filter 0.5s ease;
+}
+/* out of the flow, so hiding it never moves the folders */
+.folder__label {
+  position: absolute;
+  top: calc(100% + 1.9rem);
+  left: 50%;
+  transform: translateX(-50%);
+  font-family: var(--font-title);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+/* hand-drawn pen loop on hover: JS shows one frame at a time ("boil") */
+.scribble {
+  position: absolute;
+  left: -14%;
+  top: -20%;
+  width: 128%;
+  height: 140%;
+  max-width: none;
+  overflow: visible;
+  pointer-events: none;
+}
+.scribble path {
+  fill: none;
+  stroke: var(--black);
+  stroke-width: 3;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 1 1;
+  stroke-dashoffset: 0;
+  opacity: 0;
+}
+
+/* opened state */
+.pj.is-open .pj__folders {
+  gap: 1.25rem;
+  padding-top: 10.5rem;
+}
+.pj.is-open .folder__art {
+  width: 3.4rem;
+}
+.pj.is-open .scribble {
+  display: none;
+}
+.pj.is-open .folder:not(.is-active) .folder__img {
+  filter: grayscale(1) contrast(0.35) brightness(1.65);
+}
+
+.pj__stage {
+  margin-top: 2.45rem;
+}
+.pj__stage[hidden],
+.pj__carousel[hidden] {
+  display: none;
+}
+.pj__carousel {
+  position: relative;
+  outline: none;
+}
+.pj__track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  will-change: transform;
+  touch-action: pan-y;
+  cursor: grab;
+  user-select: none;
+}
+.pj__track.is-dragging {
+  cursor: grabbing;
+}
+
+.card {
+  position: relative;
+  flex: none;
+  display: block;
+  width: 40.4rem;
+  aspect-ratio: 16 / 9;
+  border-radius: 0.6rem;
+  overflow: hidden;
+  background: #ddd;
+}
+.card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  pointer-events: none;
+  -webkit-user-drag: none;
+}
+.card.is-active {
+  cursor: pointer;
+}
+.card--placeholder {
+  display: grid;
+  place-items: center;
+  background: #e2e2e2;
+  color: #8a8a8a;
+  font-family: var(--font-title);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.pj__progress {
+  position: relative;
+  width: 38.25rem;
+  height: 3px;
+  margin: 1.4rem auto 0;
+  background: rgba(20, 20, 20, 0.15);
+}
+.pj__progress-fill {
+  position: absolute;
+  inset: 0;
+  background: var(--black);
+  transform-origin: left center;
+  transform: scaleX(0);
+}
+
+.pj__caption {
+  margin-top: 4.3rem;
+  text-align: center;
+}
+.pj__title {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.pj__desc {
+  margin-top: 0.6rem;
+  font-size: 1.05rem;
+}
+
+@media (max-width: 1024px) {
+  .pj__folders {
+    gap: 1.5rem;
+    padding-top: 10rem;
+  }
+  .folder__art {
+    width: 27vw;
+  }
+  .pj.is-open .pj__folders {
+    padding-top: 6rem;
+  }
+  .card {
+    width: 80vw;
+  }
+  .pj__track {
+    gap: 1rem;
+  }
+  .pj__progress {
+    width: 70vw;
+  }
+  .pj__caption {
+    margin-top: 2rem;
+    padding: 0 1.5rem;
+  }
+}

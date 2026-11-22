@@ -1,0 +1,340 @@
+---
+// Content transcribed from project-details.png (Figma: jamalism, node 2142-497).
+import Mark from './Mark.astro';
+import { SYMBOL_PATH } from '../data/logo';
+
+const snapshot: [string, string][] = [
+  ['Brand name', 'LLAMAAAJ — exact spelling and capitalization preserved'],
+  ['Brand type', 'Personal brand / independent multidisciplinary digital creative'],
+  ['Founder background', 'Information Systems graduate'],
+  ['Disciplines', 'Graphic design · UI/UX design · front-end development · video editing'],
+  ['Primary audience', 'Recruiters, potential clients, small businesses, creative teams, product teams, collaborators'],
+  ['Positioning', 'A multidisciplinary creative who connects visual communication, digital experience, and implementation'],
+  ['Core promise', 'Thoughtful visual solutions that are not only attractive, but also structured and usable'],
+  ['Logo architecture', 'LL lettermark / monogram as primary symbol, supported by a custom wordmark → combination mark'],
+  ['Style', 'Minimalist, flat, geometric, contemporary, confident'],
+];
+
+const tileRows = [
+  { variant: 'black', label: 'Black', accent: false },
+  { variant: 'white', label: 'White', accent: false },
+  { variant: 'colour', label: 'Colour', accent: true },
+] as const;
+
+const strategyCards = [
+  ['01', 'Inventive', 'Explores different visual directions to solve communication problems.'],
+  ['02', 'Systematic', 'Understands structure, hierarchy, user flows and the logic behind digital products.'],
+  ['03', 'Adaptable', 'Moves between graphic design, interfaces, front-end work and motion / video.'],
+];
+
+const principles = [
+  'Discipline-neutral symbol — no cursor, pencil, brackets or play button',
+  'Monochrome first; electric lime is optional',
+  'Compact enough for avatar, favicon and watermark',
+  'Wordmark spelling LLAMAAAJ stays exact',
+];
+
+const architecture: [string, string, string][] = [
+  ['Wordmark', 'Supporting', 'LLAMAAAJ text carries the name; repeated A forms offer kerning interest.'],
+  ['Lettermark / monogram', 'PRIMARY', 'LL is compact enough for avatar, favicon and watermark.'],
+  ['Pictorial', 'Rejected', 'Would tie the brand to one discipline.'],
+  ['Abstract', 'Considered', 'Route C is abstract but still L-derived.'],
+  ['Mascot', 'Rejected', 'Risks a childish tone.'],
+  ['Combination', 'PRIMARY LOCKUP', 'Monogram + wordmark; both usable alone.'],
+  ['Emblem', 'Rejected', 'Too dense for small sizes.'],
+];
+
+const concepts = [
+  {
+    title: 'Concept A (Selected)',
+    route: 'Route A — Interlocking LL',
+    desc: 'Two L forms share one geometric structure; the overlap is knocked out as negative space.',
+    vb: '5.9 5.9 52.2 52.2',
+    d: SYMBOL_PATH,
+    big: '9.1rem',
+    dark: '4.1rem',
+    darkSmall: '1.7rem',
+  },
+  {
+    title: 'Concept B',
+    route: 'Route B — Open-frame LL',
+    desc: 'Two L forms create a flexible frame with deliberate negative space — a canvas or workspace without a literal screen.',
+    vb: '0 0 182 182',
+    d: 'M0 55H36V146H141V182H0ZM55 0H182V127H146V36H55Z',
+    big: '9.1rem',
+    dark: '4rem',
+    darkSmall: '1.6rem',
+  },
+  {
+    title: 'Concept C',
+    route: 'Route C — Modular signal',
+    desc: 'Repeated L-derived blocks create a concise rhythm: several disciplines, one system.',
+    vb: '0 0 215 190',
+    d: 'M0 97H28V162H64V190H0ZM73 49H101V162H142V190H73ZM150 0H179V162H215V190H150Z',
+    big: '10.75rem',
+    dark: '4.6rem',
+    darkSmall: '1.9rem',
+  },
+];
+
+const typeRows: [string, string][] = [
+  ['Wordmark', 'Space Grotesk Bold · −1% letter-spacing'],
+  ['Supporting', 'Inter (Regular / Medium / Semi Bold)'],
+  ['Spelling', 'Exact: LLAMAAAJ (not shortened or auto-corrected)'],
+  ['Font substitution', 'None — all families available in Figma'],
+];
+
+const swatches = [
+  { name: 'Near-black', role: 'Primary ink', hex: '#111111', rgb: '17, 17, 17', cmyk: '0/0/0/93', fg: '#fff' },
+  { name: 'Soft white', role: 'Primary light', hex: '#F5F5F1', rgb: '245, 245, 241', cmyk: '0/0/2/4', fg: '#111' },
+  { name: 'Electric lime', role: 'Optional accent', hex: '#C9F36A', rgb: '201, 243, 106', cmyk: '17/0/56/5', fg: '#111' },
+  { name: 'Cool gray', role: 'Secondary neutral', hex: '#777B78', rgb: '119, 123, 120', cmyk: '3/0/2/52', fg: '#fff' },
+];
+
+const contrast: [string, string, string][] = [
+  ['Near-black on soft white', '17.28 : 1', 'AAA (text)'],
+  ['Near-black on lime', '14.85 : 1', 'AAA (text)'],
+  ['Cool gray on soft white', '3.93 : 1', 'Large text / graphics only'],
+  ['Soft white on near-black', '17.28 : 1', 'AAA (text)'],
+];
+---
+
+<!-- Brand Snapshot -->
+<section class="cs-sec">
+  <div class="cs-wrap cs-wrap--narrow" data-reveal>
+    <h2 class="cs-h2 cs-h2--rule">Brand Snapshot</h2>
+    <table class="cs-table">
+      <thead><tr><th>Field</th><th>Direction</th></tr></thead>
+      <tbody>{snapshot.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody>
+    </table>
+  </div>
+</section>
+
+<!-- Lockup matrix -->
+<section class="cs-sec cs-sec--dark" aria-label="Logo lockups">
+  <div class="cs-tiles">
+    {
+      tileRows.map((r) => (
+        <>
+          <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+            <div class="cs-lockup">
+              <Mark kind="symbol" width="3.25rem" accent={r.accent} />
+              <Mark kind="wordmark" width="7.9rem" />
+            </div>
+            <figcaption>Primary lockup (horizontal) — {r.label}</figcaption>
+          </figure>
+          <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+            <div class="cs-lockup cs-lockup--stack">
+              <Mark kind="symbol" width="3.65rem" accent={r.accent} />
+              <Mark kind="wordmark" width="8.9rem" />
+            </div>
+            <figcaption>Stacked lockup — {r.label}</figcaption>
+          </figure>
+          <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+            <Mark kind="symbol" width="5.05rem" accent={r.accent} />
+            <figcaption>Symbol — {r.label}</figcaption>
+          </figure>
+          <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+            <Mark kind="wordmark" width="13.6rem" />
+            <figcaption>Wordmark — {r.label}</figcaption>
+          </figure>
+        </>
+      ))
+    }
+  </div>
+</section>
+
+<!-- Brand Strategy -->
+<section class="cs-sec">
+  <div class="cs-wrap">
+    <h2 class="cs-h2" data-reveal>Brand Strategy</h2>
+    <div class="cs-strategy">
+      <div data-reveal>
+        <p class="cs-label">Central idea</p>
+        <p class="cs-idea">Creative thinking with a clear structure.</p>
+        <div class="cs-cards">
+          {
+            strategyCards.map(([n, t, d]) => (
+              <div class="cs-card">
+                <h3>
+                  {n}&nbsp;&nbsp;{t}
+                </h3>
+                <p>{d}</p>
+              </div>
+            ))
+          }
+        </div>
+        <div class="cs-promise">
+          <p class="cs-label">Brand promise</p>
+          <p>Thoughtful visual solutions that are attractive, structured, and usable.</p>
+        </div>
+      </div>
+      <aside class="cs-principles" data-reveal>
+        <h3>Design principles</h3>
+        <ul>{principles.map((p) => <li>• {p}</li>)}</ul>
+        <p class="cs-shared">Shared: minimalist · flat · scalable · monochrome-first</p>
+      </aside>
+    </div>
+  </div>
+</section>
+
+<!-- Logo Architecture -->
+<section class="cs-sec cs-sec--dark">
+  <div class="cs-wrap">
+    <h2 class="cs-h2" data-reveal>Logo Architecture</h2>
+    <div class="cs-arch">
+      <table class="cs-table cs-table--plain cs-table--small" data-reveal>
+        <thead><tr><th>Type</th><th>Verdict</th><th>Reason</th></tr></thead>
+        <tbody>{architecture.map(([a, b, c]) => <tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>
+      </table>
+      <div data-reveal>
+        <figure class="cs-preview" style="margin:0">
+          <div class="cs-lockup" style="gap:2.5rem">
+            <Mark kind="symbol" width="5.25rem" />
+            <Mark kind="wordmark" width="13rem" />
+          </div>
+          <figcaption>
+            Primary lockup: symbol + wordmark (combination mark) — shown in black as a first-pass monochrome study
+          </figcaption>
+        </figure>
+        <p class="cs-arch-note">
+          Creative thinking with a clear structure.<br />
+          The symbol is built to work alone (avatar / icon / stamp); the wordmark must work alone on signage and documents.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Concept Exploration -->
+<section class="cs-sec">
+  <div class="cs-wrap">
+    <h2 class="cs-h2" data-reveal>Concept Exploration</h2>
+    <div class="cs-concepts">
+      {
+        concepts.map((c) => (
+          <div class="cs-concept" data-reveal>
+            <h3>{c.title}</h3>
+            <div class="cs-concept__big">
+              <svg class="mark" viewBox={c.vb} style={`width:${c.big}`} aria-hidden="true">
+                <path d={c.d} />
+              </svg>
+            </div>
+            <div class="cs-concept__dark">
+              <small>White on black</small>
+              <svg class="mark" viewBox={c.vb} style={`width:${c.dark}`} aria-hidden="true">
+                <path d={c.d} />
+              </svg>
+              <div class="cs-lockup" style="gap:0.8rem">
+                <svg class="mark" viewBox={c.vb} style={`width:${c.darkSmall}`} aria-hidden="true">
+                  <path d={c.d} />
+                </svg>
+                <Mark kind="wordmark" width="4.2rem" />
+              </div>
+            </div>
+            <div class="cs-concept__small">
+              <h4>Small-size check (black)</h4>
+              <div class="cs-sizes">
+                {[64, 32, 24, 16].map((px) => (
+                  <div>
+                    <svg class="mark" viewBox={c.vb} style={`width:${px * 0.62}px`} aria-hidden="true">
+                      <path d={c.d} />
+                    </svg>
+                    <span>{px} px</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div class="cs-concept__route">
+              <h4>{c.route}</h4>
+              <p>{c.desc}</p>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>
+
+<!-- Selected Concept -->
+<section class="cs-sec cs-sec--dark">
+  <h2 class="cs-h2" data-reveal>Selected Concept</h2>
+  <div class="cs-selected">
+    <div class="cs-selected__sym" data-reveal>
+      <Mark kind="symbol" width="14.5rem" />
+    </div>
+    <div data-reveal>
+      <div class="cs-selected__lime">
+        <div class="cs-lockup" style="gap:1.9rem">
+          <Mark kind="symbol" width="4.1rem" />
+          <Mark kind="wordmark" width="10rem" />
+        </div>
+      </div>
+      <h3>Selected: A — Interlocking LL</h3>
+      <p>
+        Chosen for the most ownable silhouette: two L forms share one structure, and the overlap becomes a knocked-out
+        square — structure (the grid) plus creativity (the cut). It holds at avatar scale and in one colour. B stays on
+        file for the workspace idea but its corner gaps thin at 16 px; C reads as a bar chart.
+      </p>
+      <p class="cs-next">
+        Next: build on a modular grid, correct optically, test small sizes, then apply colour only after the monochrome
+        version is approved.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- Design System -->
+<section class="cs-sec">
+  <div class="cs-wrap cs-wrap--narrow">
+    <h2 class="cs-h2" data-reveal>Design System</h2>
+
+    <h3 class="cs-ds-label" data-reveal>Typography</h3>
+    <div class="cs-specimen" data-reveal>LLAMAAAJ</div>
+    <div class="cs-type" data-reveal>
+      <table class="cs-table">
+        <tbody>{typeRows.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody>
+      </table>
+      <div>
+        <h4>Kerning / refinement status</h4>
+        <p class="cs-type__note">
+          Repeated A forms stay unaltered in this study; only global tracking was set. Per-pair kerning and any custom A
+          cut are open refinements.
+        </p>
+        <p class="cs-type__sample">Aa Bb Cc 0123456789</p>
+        <p>Supporting text sample — The quick brown fox jumps over the lazy dog.</p>
+      </div>
+    </div>
+
+    <h3 class="cs-ds-label" style="margin-top:4rem" data-reveal>Color System</h3>
+    <div class="cs-swatches" data-reveal>
+      {
+        swatches.map((s) => (
+          <div class="cs-swatch" style={`background:${s.hex};color:${s.fg}`}>
+            <h4>{s.name}</h4>
+            <p class="role">{s.role}</p>
+            <p class="codes">
+              {s.hex}
+              <br />
+              RGB {s.rgb}
+              <br />
+              CMYK≈ {s.cmyk}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+    <p class="cs-fine">CMYK values are a naive conversion for handoff only — verify with a print provider. No Pantone values are specified.</p>
+
+    <div class="cs-contrast" data-reveal>
+      <table class="cs-table">
+        <thead><tr><th>Pairing (computed WCAG contrast)</th><th>Ratio</th><th>Result</th></tr></thead>
+        <tbody>{contrast.map(([a, b, c]) => <tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>
+      </table>
+      <p>
+        Colour is applied only after the black / white versions were approved. The symbol never depends on colour to be
+        understood.
+      </p>
+    </div>
+  </div>
+</section>

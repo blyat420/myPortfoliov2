@@ -1,0 +1,61 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { profile, heroFigure, toolRows } from '../data/site';
+---
+
+<Layout title="LLAMAAAJ — Rizal Jamalul Lail" namespace="home">
+  <section class="hero" data-hero>
+    <h1 class="sr-only">LLAMAAAJ, portfolio of {profile.name}</h1>
+
+    <div class="hero__col hero__col--left">
+      <div class="hero__block" data-step>
+        <h2 class="hero__head" data-tw>Name</h2>
+        <p class="hero__text" data-tw>{profile.name}</p>
+      </div>
+      <div class="hero__block" data-step>
+        <h2 class="hero__head" data-tw>About me</h2>
+        <div class="hero__text hero__text--justify" data-tw>
+          {profile.about.map((p) => <p>{p}</p>)}
+        </div>
+      </div>
+    </div>
+
+    <div class="hero__figure" data-figure>
+      <img src={heroFigure} alt={`${profile.name} standing on a rock`} width="1600" height="2012" fetchpriority="high" />
+    </div>
+
+    <div class="hero__col hero__col--right">
+      <div class="hero__block" data-step>
+        <h2 class="hero__head" data-tw>Education.</h2>
+        <div class="edu" data-tw>
+          {
+            profile.education.map((e) => (
+              <div class="edu__row">
+                <span>{e.years}</span>
+                <span>
+                  <b>{e.title}</b> – {e.place}
+                </span>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+      <div class="hero__block hero__block--tools" data-step>
+        <h2 class="hero__head" data-tw>Tools</h2>
+        <div class="tools">
+          {
+            toolRows.map((row, i) => (
+              <div class:list={['tools__row', { 'tools__row--dense': i === toolRows.length - 1 }]}>
+                {row.map((t) => (
+                  <span class="tools__icon" title={t.name} data-tool>
+                    <img src={t.src} alt={t.name} width="34" height="34" />
+                  </span>
+                ))}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>

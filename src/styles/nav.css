@@ -1,0 +1,188 @@
+/* Navbar: logo · Projects · Resume · Call me (dropdown) */
+
+.nav {
+  position: absolute;
+  top: 1.4rem;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  /* revealed by JS (.is-shown) after the first page's intro finishes */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.6rem);
+  transition: opacity 0.8s ease, transform 1s var(--ease-out), visibility 0s linear 0.8s;
+}
+.nav.is-shown {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+@media (prefers-reduced-motion: reduce) {
+  .nav {
+    transition: none;
+  }
+}
+.nav__inner {
+  display: flex;
+  align-items: center;
+  gap: 1.35rem;
+  pointer-events: auto;
+}
+
+.nav__logo {
+  display: block;
+  width: 8.1rem;
+  margin-right: 0.1rem;
+}
+.nav__logo img {
+  width: 100%;
+  height: auto;
+}
+
+.nav__item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  height: 2.7rem;
+  padding: 0 1.3rem;
+  border: 1px solid transparent;
+  font-family: var(--font-title);
+  font-size: 0.9rem;
+  font-weight: 400;
+  line-height: 1;
+  white-space: nowrap;
+  transition: border-color 0.2s ease;
+}
+/* hidden bold copy reserves the bold width so nothing shifts on hover */
+.nav__label {
+  display: inline-block;
+  transition: font-weight 0.2s ease;
+}
+.nav__label::after {
+  content: attr(data-text);
+  display: block;
+  height: 0;
+  overflow: hidden;
+  visibility: hidden;
+  font-weight: 700;
+}
+@media (hover: hover) {
+  .nav__item:hover {
+    border-color: var(--black);
+  }
+  .nav__item:hover .nav__label {
+    font-weight: 700;
+  }
+}
+.nav__item[aria-current='page'],
+.nav__item[aria-expanded='true'] {
+  border-color: var(--black);
+}
+.nav__item[aria-current='page'] .nav__label,
+.nav__item[aria-expanded='true'] .nav__label {
+  font-weight: 700;
+}
+
+.nav__dot {
+  width: 0.3rem;
+  height: 0.3rem;
+  margin-left: 0.55rem;
+  border-radius: 50%;
+  background: var(--black);
+  transition: transform 0.3s var(--ease-out);
+}
+.nav__item[aria-expanded='true'] .nav__dot {
+  transform: scale(1.7);
+}
+
+/* dropdown */
+.nav__dd {
+  position: relative;
+}
+.nav__panel {
+  position: absolute;
+  top: calc(100% + 0.5rem);
+  right: 0;
+  width: 17.5rem;
+  padding: 0.35rem;
+  background: var(--white);
+  border: 1px solid var(--black);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-0.5rem);
+  transition: opacity 0.25s ease, transform 0.35s var(--ease-out), visibility 0s linear 0.25s;
+}
+.nav__dd.is-open .nav__panel {
+  opacity: 1;
+  visibility: visible;
+  transform: none;
+  transition-delay: 0s;
+}
+.nav__link {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.7rem 0.8rem;
+  font-size: 0.8rem;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+.nav__link b {
+  font-family: var(--font-title);
+  font-weight: 600;
+}
+.nav__link span {
+  opacity: 0.75;
+}
+@media (hover: hover) {
+  .nav__link:hover {
+    background: var(--black);
+    color: var(--white);
+  }
+}
+.nav__link:focus-visible {
+  background: var(--black);
+  color: var(--white);
+  outline-offset: -2px;
+}
+
+@media (max-width: 1024px) {
+  .nav {
+    top: 0.8rem;
+  }
+  .nav__inner {
+    gap: 0.2rem;
+  }
+  .nav__logo {
+    width: 6.6rem;
+  }
+  .nav__item {
+    height: 2.4rem;
+    padding: 0 0.7rem;
+    font-size: 0.85rem;
+  }
+  .nav__panel {
+    width: min(17.5rem, 86vw);
+  }
+}
+
+/* small phones: the 1024px sizing makes the bar ~336px wide, wider than a 320px viewport */
+@media (max-width: 400px) {
+  .nav__inner {
+    gap: 0.1rem;
+  }
+  .nav__logo {
+    width: 5.4rem;
+    margin-right: 0;
+  }
+  .nav__item {
+    padding: 0 0.55rem;
+  }
+  .nav__dot {
+    margin-left: 0.4rem;
+  }
+}

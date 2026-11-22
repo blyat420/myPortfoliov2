@@ -1,0 +1,654 @@
+[
+  {
+    "slug": "jamalpos",
+    "title": "JamalPOS",
+    "subtitle": "Point of Sale (POS) dan Inventory Management System",
+    "categoryLabel": "Point of Sale & Inventory",
+    "year": "2025",
+    "client": "Retail & F&B Operations",
+    "role": "Lead Product Designer & System Architect",
+    "tools": [
+      "Figma",
+      "React 19",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "overview": "JamalPOS merupakan proyek Point of Sale (POS) dan Inventory Management System yang dirancang untuk membantu bisnis retail atau F&B dalam mengelola transaksi penjualan sekaligus persediaan barang. Sistem ini menyediakan fitur kasir seperti pencarian produk, keranjang transaksi, held order, serta metode pembayaran cash, QRIS, dan debit.",
+    "challenge": "Selain itu, JamalPOS memiliki fitur manajemen inventori untuk mengelola produk, stok, supplier, wastage, dan penyesuaian stok, serta dashboard analitik untuk memantau revenue, margin, tren penjualan, produk terlaris, dan deadstock.",
+    "solution": "Sistem juga menerapkan pembagian akses antara Cashier dan Manager/Owner serta menyediakan audit log untuk mencatat aktivitas pengguna. Secara keseluruhan, JamalPOS dibuat sebagai portfolio project yang mensimulasikan sistem kasir terintegrasi dengan manajemen inventori dan analitik bisnis.",
+    "highlights": [
+      "Fitur Kasir: Pencarian produk instan, keranjang transaksi, held order, dan pembayaran (Cash, QRIS, Debit)",
+      "Manajemen Inventori: Produk, stok real-time, supplier, wastage, dan penyesuaian stok otomatis",
+      "Dashboard Analitik: Revenue, margin, tren penjualan harian/mingguan, produk terlaris, & deadstock",
+      "Role-Based Access: Pembagian hak akses antara Cashier dan Manager/Owner serta audit logging"
+    ],
+    "metrics": [
+      {
+        "label": "Latency",
+        "value": "< 1s"
+      },
+      {
+        "label": "Audit Log",
+        "value": "100% Real-time"
+      },
+      {
+        "label": "Payment",
+        "value": "Cash, QRIS, Debit"
+      },
+      {
+        "label": "Roles",
+        "value": "Cashier & Owner"
+      }
+    ],
+    "liveUrl": "https://pussystem.vercel.app/pos.html",
+    "cover": "/projects/jamalpos/regenerated_image_1788951612712-D6DRfSvx.webp",
+    "gallery": [
+      {
+        "url": "/projects/jamalpos/gallery/01-landing.webp",
+        "caption": "JamalPOS landing page: overview of the cashier till and back-office"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/02-cashier.webp",
+        "caption": "Cashier till: product grid with stock badges, category filters and SKU search"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/03-cart.webp",
+        "caption": "Cashier till: order cart with quantity, variants, notes, discount and VAT"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/04-payment-qris.webp",
+        "caption": "Payment dialog: Cash, QRIS / Transfer and Debit Card methods"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/05-receipt.webp",
+        "caption": "Payment complete: receipt ready for thermal printing or email"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/06-overview.webp",
+        "caption": "Back-office overview: revenue, margin, sales trend, category split, best-sellers and deadstock"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/07-products.webp",
+        "caption": "Products & stock: master data, stock status and reorder thresholds"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/08-add-product.webp",
+        "caption": "Add product form with SKU, category, cost, price and opening stock"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/09-audit-log.webp",
+        "caption": "Audit log: every stock movement and sale tied to a user"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/10-staff-roles.webp",
+        "caption": "Staff & roles: Cashier and Manager access levels"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/11-cashier-dark.webp",
+        "caption": "Cashier till in dark mode with an active order"
+      },
+      {
+        "url": "/projects/jamalpos/gallery/12-overview-dark.webp",
+        "caption": "Back-office overview in dark mode"
+      }
+    ]
+  },
+  {
+    "slug": "reed",
+    "title": "REED",
+    "subtitle": "Web Platform to Read Manga, Manhwa and community.",
+    "categoryLabel": "Manga & Comic Platform",
+    "year": "2025",
+    "client": "Digital Publishing & Community",
+    "role": "UI/UX Designer & Frontend Developer",
+    "tools": [
+      "Figma",
+      "React",
+      "Tailwind CSS",
+      "Web Reader API"
+    ],
+    "overview": "REED adalah sebuah prototipe platform untuk membaca manga secara digital. Situs web ini dirancang agar pengguna dapat menjelajahi berbagai katalog judul manga, mencari seri tertentu, menyaring daftar bacaan berdasarkan genre, dan membaca setiap bab secara langsung melalui antarmuka pembaca web khusus.",
+    "challenge": "Selain fitur utama membaca dan melihat detail katalog, situs ini juga dilengkapi dengan forum komunitas interaktif di mana pengguna dapat berbagi rekomendasi bacaan, berdiskusi, serta menyukai atau menyimpan kiriman dari pembaca lain.",
+    "solution": "Untuk pengalaman membaca yang lebih terorganisir, platform ini menyediakan sistem akun pengguna untuk mengatur biodata profil, menyimpan koleksi manga favorit ke dalam daftar bookmark, serta menawarkan halaman khusus untuk langganan keanggotaan premium yang memberikan akses fitur eksklusif seperti membaca tanpa iklan, pengunduhan mode luring (offline), dan akses bab lebih awal.",
+    "highlights": [
+      "Katalog Manga Komprehensif: Jelajahi seri populer, pencarian cepat, dan filter multi-genre",
+      "Antarmuka Pembaca Web Khusus: Pengalaman membaca vertikal & horizontal tanpa distraksi",
+      "Forum Komunitas Interaktif: Bagikan rekomendasi bacaan, diskusi chapter, & interaksi suka/simpan",
+      "Akun & Keanggotaan Premium: Bookmark koleksi favorit, baca bebas iklan, & download offline"
+    ],
+    "metrics": [
+      {
+        "label": "Interface",
+        "value": "Reader Optimized"
+      },
+      {
+        "label": "Catalog Filter",
+        "value": "Multi-Genre"
+      },
+      {
+        "label": "Community",
+        "value": "Forums & Reviews"
+      },
+      {
+        "label": "Mode",
+        "value": "Offline & Premium"
+      }
+    ],
+    "liveUrl": "https://reedbyjamalism.vercel.app",
+    "cover": "/projects/reed/regenerated_image_1788951615428-BjG6w7rX.webp",
+    "gallery": [
+      {
+        "url": "/projects/reed/gallery/01-home.webp",
+        "caption": "REED home: featured chapter and this week's trending list"
+      },
+      {
+        "url": "/projects/reed/gallery/02-manga-list.webp",
+        "caption": "Manga list with paginated catalog cards"
+      },
+      {
+        "url": "/projects/reed/gallery/03-popular.webp",
+        "caption": "Popular page with ranked titles and view counts"
+      },
+      {
+        "url": "/projects/reed/gallery/04-detail-orv.webp",
+        "caption": "Manga detail: synopsis, genres, rating, bookmark and chapter list"
+      },
+      {
+        "url": "/projects/reed/gallery/05-reader.webp",
+        "caption": "Web reader with previous / next chapter controls"
+      },
+      {
+        "url": "/projects/reed/gallery/06-community.webp",
+        "caption": "Community forum: posts, likes, comments and saves"
+      },
+      {
+        "url": "/projects/reed/gallery/07-login.webp",
+        "caption": "Welcome back: login with email or Google, Apple and Facebook"
+      },
+      {
+        "url": "/projects/reed/gallery/08-premium.webp",
+        "caption": "Premium plans: Basic and REED Premium+"
+      }
+    ]
+  },
+  {
+    "slug": "jamal-worshipper-hris",
+    "title": "Jamal Worshipper (HRIS)",
+    "subtitle": "Human Resources Information System (Attendance, Leave & Payroll)",
+    "categoryLabel": "HRIS Enterprise Platform",
+    "year": "2024",
+    "client": "Internal Enterprise Operations",
+    "role": "Product Designer & Frontend Engineer",
+    "tools": [
+      "Figma",
+      "React",
+      "Tailwind CSS",
+      "TypeScript"
+    ],
+    "overview": "Jamal HRIS (Jamal Worshipper) merupakan sistem Human Resources Information System yang dirancang untuk membantu perusahaan mengelola kebutuhan administrasi karyawan secara terintegrasi. Sistem ini berfokus pada tiga kebutuhan utama, yaitu attendance, leave, dan payroll, sehingga dapat mengurangi ketergantungan pada pencatatan spreadsheet dan mempermudah pengelolaan data karyawan.",
+    "challenge": "Aplikasi dilengkapi dengan sistem login dan role-based access untuk membedakan akses pengguna sesuai perannya, seperti Admin, Frontend, Backend, Finance, Customer Success, dan QA Engineer.",
+    "solution": "Secara keseluruhan, Jamal HRIS merupakan prototype sistem HR yang mensimulasikan pengelolaan informasi dan aktivitas karyawan dalam satu platform yang intuitif dengan sentuhan visual ceria.",
+    "highlights": [
+      "Tiga Modul Utama: Manajemen presensi (attendance), pengajuan cuti (leave), dan penggajian (payroll)",
+      "Role-Based Access Control: Hak akses spesifik untuk Admin, Frontend, Backend, Finance, CS, dan QA",
+      "Dashboard Analitik: Visualisasi kehadiran harian (0/6 present), monitoring keterlambatan, & pembagian divisi",
+      "Pengurangan Spreadsheet: Otomasi alur persetujuan cuti dan rekapitulasi data absensi terpusat"
+    ],
+    "metrics": [
+      {
+        "label": "Core Focus",
+        "value": "Attendance & Payroll"
+      },
+      {
+        "label": "Role Access",
+        "value": "6 Divisions"
+      },
+      {
+        "label": "Platform",
+        "value": "Centralized Web"
+      },
+      {
+        "label": "Architecture",
+        "value": "Modular System"
+      }
+    ],
+    "liveUrl": "https://jamal-worshipper.vercel.app/employee-dashboard.html",
+    "cover": "/projects/jamal-worshipper-hris/regenerated_image_1788951619931-Bmddk45b.webp",
+    "gallery": [
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/01-signin.webp",
+        "caption": "Sign in with demo accounts for each role"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/02-admin-analytics.webp",
+        "caption": "Admin analytics: attendance KPIs, 7-day trend and headcount by division"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/03-admin-employees.webp",
+        "caption": "Admin: employee master data"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/04-admin-add-employee.webp",
+        "caption": "Admin: add employee dialog with division, role and base salary"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/05-admin-approvals.webp",
+        "caption": "Admin: leave and overtime approvals queue"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/06-admin-attendance.webp",
+        "caption": "Admin: live attendance log and remote check-in map"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/07-admin-payroll.webp",
+        "caption": "Admin: automated payroll engine before generation"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/08-admin-generate-payroll.webp",
+        "caption": "Admin: payroll generated with deductions, net pay and total disbursement"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/09-employee-overview.webp",
+        "caption": "Employee overview: clock in, leave balance and monthly stats"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/10-employee-timesheet.webp",
+        "caption": "Employee timesheet auto-generated from clock in and out"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/11-employee-leave.webp",
+        "caption": "Employee leave request form"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/12-employee-overtime.webp",
+        "caption": "Employee overtime submission"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/13-employee-payslip.webp",
+        "caption": "E-Payslip with earnings, deductions and PDF download"
+      },
+      {
+        "url": "/projects/jamal-worshipper-hris/gallery/14-employee-profile.webp",
+        "caption": "Employee profile and emergency contact"
+      }
+    ]
+  },
+  {
+    "slug": "echo-of-the-hollow",
+    "title": "Echo of the Hollow",
+    "subtitle": "2D Dark Fantasy Adventure Game & Bengi Character Design",
+    "categoryLabel": "Game Design & Character Art",
+    "year": "2024",
+    "client": "Festika 7 Creative Division",
+    "role": "Graphic Designer & Character Artist",
+    "tools": [
+      "Pixel Art",
+      "Illustrator",
+      "Photoshop",
+      "Unity 2D"
+    ],
+    "overview": "Festika 7 (Festival Teknologi, Inovasi, Kesenian, dan Olahraga) merupakan kegiatan mahasiswa yang menggabungkan berbagai bidang, mulai dari teknologi, inovasi, seni, hingga olahraga dalam satu rangkaian acara. Kegiatan ini menjadi wadah bagi mahasiswa untuk mengembangkan kreativitas, menunjukkan kemampuan, serta membangun kolaborasi dan kebersamaan antarmahasiswa.",
+    "challenge": "Dalam Festika 7, saya berperan sebagai anggota Sie Graphic Design yang bertanggung jawab dalam membuat dan mengembangkan berbagai kebutuhan desain visual acara, seperti materi publikasi, media sosial, serta aset grafis lainnya.",
+    "solution": "Peran ini juga melibatkan kolaborasi dengan anggota tim kreatif dan divisi terkait untuk memastikan setiap materi visual sesuai dengan konsep dan identitas Festika 7, termasuk pengembangan karakter ikonik \"Bengi\" dan demo game atmosferik 2D \"Echo of the Hollow\".",
+    "highlights": [
+      "Karakter Utama Bengi: Karakter bertanduk misterius dengan siluet gelap dan jubah merah ikonik",
+      "Demo Game 2D: Rancang visual dungeon retro dengan pencahayaan obor merah atmosferik",
+      "Sie Graphic Design: Kolaborasi intensif merancang aset grafis dan media promosi acara",
+      "Identitas Visual Tematik: Memadukan tema dark fantasy petualangan dengan estetika festival"
+    ],
+    "metrics": [
+      {
+        "label": "Role",
+        "value": "Graphic Design"
+      },
+      {
+        "label": "Main Character",
+        "value": "Bengi"
+      },
+      {
+        "label": "Game Style",
+        "value": "2D Dark Fantasy"
+      },
+      {
+        "label": "Event",
+        "value": "Festika 7"
+      }
+    ],
+    "liveUrl": "https://instagram.com/mr_jamaaal",
+    "cover": "/projects/echo-of-the-hollow/regenerated_image_1788951623306-BpF75AcI.webp",
+    "gallery": [
+      {
+        "url": "/projects/echo-of-the-hollow/echo_0-CB00hWI7.webp",
+        "caption": "Bengi Character Design & Adventurer Visual Sheet"
+      },
+      {
+        "url": "/projects/echo-of-the-hollow/echo_1-Bt6mtWZ3.webp",
+        "caption": "Echo of the Hollow 2D Pixel Dungeon Gate & Torchlit Scene"
+      },
+      {
+        "url": "/projects/echo-of-the-hollow/regenerated_image_1788951623306-BpF75AcI.webp",
+        "caption": "Festika 7 Sie Graphic Design Visual Showcase"
+      }
+    ]
+  },
+  {
+    "slug": "jourmalism",
+    "title": "JOURMALISM",
+    "subtitle": "Daily habit tracker and personal journaling application.",
+    "categoryLabel": "Habit Tracking & Personal Journaling",
+    "year": "2025",
+    "client": "Personal Productivity & Wellness",
+    "role": "Product Designer & Frontend Engineer",
+    "tools": [
+      "React",
+      "Supabase",
+      "Authentication",
+      "Row-Level Security"
+    ],
+    "overview": "Jourmalism is a minimalist, mobile-first daily habit tracker and personal journaling application designed to encourage steady momentum through visual clarity and zero-friction interactions.",
+    "challenge": "The platform combines structured routine tracking with mindful daily reflections in one unified dashboard, removing the need to switch between separate to-do and note-taking apps.",
+    "solution": "Users can organize habits by time of day, track active streaks through a 7-day consistency strip, complete tasks with responsive spring-animated toggles, and record daily thoughts with attached photo memories. Supabase authentication and Row-Level Security provide private, persistent synchronization across devices.",
+    "highlights": [
+      "Unified Dashboard: Habits, streaks, routines, and journaling in one focused workspace",
+      "7-Day Consistency Strip: A visual overview of active habit momentum",
+      "Responsive Habit Toggles: Spring-animated completion interactions for quick daily updates",
+      "Private Cloud Sync: Supabase authentication and Row-Level Security across devices"
+    ],
+    "metrics": [
+      {
+        "label": "Platform",
+        "value": "Mobile-first Web App"
+      },
+      {
+        "label": "Core Focus",
+        "value": "Habits & Journaling"
+      },
+      {
+        "label": "Backend",
+        "value": "Supabase"
+      },
+      {
+        "label": "Security",
+        "value": "Row-Level Security"
+      }
+    ],
+    "liveUrl": "https://jourmalism.vercel.app/",
+    "cover": "/projects/jourmalism/homepage-BJp484DT.webp",
+    "gallery": [
+      {
+        "url": "/projects/jourmalism/starting-CkIn8ZiJ.webp",
+        "caption": "Jourmalism landing page - Small habits, big changes"
+      },
+      {
+        "url": "/projects/jourmalism/login-DgaqN7hM.webp",
+        "caption": "Jourmalism sign-in experience"
+      },
+      {
+        "url": "/projects/jourmalism/homepage-BJp484DT.webp",
+        "caption": "Jourmalism daily dashboard with habits and journal"
+      },
+      {
+        "url": "/projects/jourmalism/Habits-CRjAgOuX.webp",
+        "caption": "Jourmalism routine tracking dashboard"
+      },
+      {
+        "url": "/projects/jourmalism/AddedHabits-DA3gRteY.webp",
+        "caption": "Jourmalism add-habit flow"
+      },
+      {
+        "url": "/projects/jourmalism/Finished-Habits-BLar8sV5.webp",
+        "caption": "Jourmalism completed habits and streak progress"
+      },
+      {
+        "url": "/projects/jourmalism/Leaderboard-C3GrHQ-o.webp",
+        "caption": "Konco community leaderboard"
+      },
+      {
+        "url": "/projects/jourmalism/friends-ClhLVtD2.webp",
+        "caption": "Konco friends and habit community"
+      },
+      {
+        "url": "/projects/jourmalism/AccountSettings-C3RWYszj.webp",
+        "caption": "Jourmalism account settings and security preferences"
+      },
+      {
+        "url": "/projects/jourmalism/homepage-dark--CaQaYMs5.webp",
+        "caption": "Jourmalism dark mode dashboard"
+      },
+      {
+        "url": "/projects/jourmalism/gallery/01-create-account.webp",
+        "caption": "Create account: username, email and password"
+      }
+    ]
+  },
+  {
+    "slug": "dapur-ibu-hilmi",
+    "title": "Dapur Ibu Hilmi",
+    "subtitle": "Authentic Indonesian food rooted in heritage family recipes.",
+    "categoryLabel": "Culinary Brand & Food Ordering Experience",
+    "year": "2025",
+    "client": "Dapur Ibu Hilmi",
+    "role": "Web Designer & Frontend Developer",
+    "tools": [
+      "React",
+      "Tailwind CSS",
+      "Responsive Web Design",
+      "WhatsApp Ordering"
+    ],
+    "overview": "Dapur Ibu Hilmi is a warm, editorial food website presenting authentic Indonesian cuisine through the story of a family kitchen. The experience pairs heritage storytelling with an approachable menu and direct ordering journey.",
+    "challenge": "The website needed to communicate the care behind each dish while helping visitors discover specialties, understand the kitchen's philosophy, and move naturally from browsing to ordering.",
+    "solution": "The experience highlights Banyuwangi-inspired dishes such as Nasi Tempong, Soto Ayam, Ayam Bakar Hitam, Ayam Kremes, and Ayam Pedas Santan through rich food photography, curated menu categories, an aesthetic kitchen gallery, and direct WhatsApp ordering. It also supports custom family dining, mini tumpeng celebrations, and corporate lunch sets.",
+    "highlights": [
+      "Heritage Storytelling: Multi-generational bumbu rempah traditions presented through an editorial brand experience",
+      "Artisanal Menu: Signature Indonesian dishes with clear categories, descriptions, and ordering actions",
+      "Direct Conversion: WhatsApp ordering with GoFood and GrabFood delivery availability",
+      "Hospitality Focus: Custom family dining, mini tumpeng, and corporate catering enquiries"
+    ],
+    "metrics": [
+      {
+        "label": "Cuisine",
+        "value": "Authentic Indonesian"
+      },
+      {
+        "label": "Ordering",
+        "value": "WhatsApp Direct"
+      },
+      {
+        "label": "Delivery",
+        "value": "GoFood & GrabFood"
+      },
+      {
+        "label": "Availability",
+        "value": "09:00 - 22:00 WITA"
+      }
+    ],
+    "liveUrl": "https://dapur-ibu-hilmi.vercel.app/",
+    "cover": "/projects/dapur-ibu-hilmi/1-Cjr5gL1N.webp",
+    "gallery": [
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/01-hero.webp",
+        "caption": "Hero: \"Authentic Homemade Taste, Passed Down Through Generations\""
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/02-philosophy.webp",
+        "caption": "Philosophy: heritage recipes, local ingredients and cooking with passion"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/03-menu.webp",
+        "caption": "Menu: curated food specialties with Order via WhatsApp"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/04-beverages.webp",
+        "caption": "Menu: beverages category"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/05-menu-detail.webp",
+        "caption": "Menu item detail with price, quantity and WhatsApp order"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/06-gallery.webp",
+        "caption": "Aesthetic gallery of the kitchen's dishes"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/07-testimonials.webp",
+        "caption": "Testimonials carousel"
+      },
+      {
+        "url": "/projects/dapur-ibu-hilmi/gallery/08-contact.webp",
+        "caption": "Catering enquiry and contact footer"
+      }
+    ]
+  },
+  {
+    "slug": "ecometric-daurlink",
+    "title": "Ecometric Daurlink",
+    "subtitle": "A live web project for Ecometric Daurlink.",
+    "categoryLabel": "Web Project",
+    "year": "2026",
+    "role": "Web Designer & Frontend Developer",
+    "tools": [
+      "Web Design",
+      "Frontend Development"
+    ],
+    "overview": "Ecometric Daurlink is a live web project built to present the Ecometric Daurlink experience online.",
+    "challenge": "The project brings its identity and information together in a dedicated web experience.",
+    "solution": "Explore the live project to see its design and functionality.",
+    "highlights": [
+      "Dedicated web experience for Ecometric Daurlink",
+      "Live deployment available to explore"
+    ],
+    "metrics": [],
+    "liveUrl": "https://ecometricdaurlink.vercel.app",
+    "cover": "/projects/ecometric-daurlink/ecometricdaulink-hLIQ1Jfy.webp",
+    "gallery": [
+      {
+        "url": "/projects/ecometric-daurlink/gallery/01-hero.webp",
+        "caption": "Hero: \"Clear insights. Real strategy. Sustainable growth.\""
+      },
+      {
+        "url": "/projects/ecometric-daurlink/gallery/02-dampak.webp",
+        "caption": "Impact metrics: households, tons recycled and operational efficiency"
+      },
+      {
+        "url": "/projects/ecometric-daurlink/gallery/03-solusi.webp",
+        "caption": "Solutions for households, waste banks and recycling industry"
+      },
+      {
+        "url": "/projects/ecometric-daurlink/gallery/04-tentang.webp",
+        "caption": "Team: co-founders and academic support"
+      },
+      {
+        "url": "/projects/ecometric-daurlink/gallery/05-kontak.webp",
+        "caption": "Call to action and footer"
+      }
+    ]
+  },
+  {
+    "slug": "reed-v2",
+    "title": "REED V2",
+    "subtitle": "A new version of the REED manga reading platform.",
+    "categoryLabel": "Manga & Comic Platform",
+    "year": "2026",
+    "role": "UI/UX Designer & Frontend Developer",
+    "tools": [
+      "Web Design",
+      "Frontend Development"
+    ],
+    "overview": "REED V2 is the latest version of the REED manga reading project, available as a live web experience.",
+    "challenge": "This version continues the project as a dedicated place to explore and read manga online.",
+    "solution": "Visit the live deployment to experience REED V2.",
+    "highlights": [
+      "Second version of the REED project",
+      "Live manga reading web experience"
+    ],
+    "metrics": [],
+    "liveUrl": "https://reedmanga.vercel.app",
+    "cover": "/projects/reed-v2/reedmangav2-BaFsebmm.webp",
+    "gallery": [
+      {
+        "url": "/projects/reed-v2/gallery/01-home.webp",
+        "caption": "REED v2 home"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/02-top3.webp",
+        "caption": "Top 3: The Great Estate Developer"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/03-top3-lookism.webp",
+        "caption": "Top 3: Lookism"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/04-top3-knight.webp",
+        "caption": "Top 3: Eternally Regressing Knight"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/05-top10.webp",
+        "caption": "Top 10 carousel"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/06-top10-next.webp",
+        "caption": "Top 10 carousel: title details, score and tags"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/07-others.webp",
+        "caption": "Other titles grid"
+      },
+      {
+        "url": "/projects/reed-v2/gallery/08-creator.webp",
+        "caption": "Creator section"
+      }
+    ]
+  },
+  {
+    "slug": "3d-cola-website",
+    "title": "3D Cola Website",
+    "subtitle": "A 3D-focused website experience for Coca-Cola.",
+    "categoryLabel": "3D Web Experience",
+    "year": "2026",
+    "role": "3D Artist & Frontend Developer",
+    "tools": [
+      "3D Web Design",
+      "Frontend Development"
+    ],
+    "overview": "3D Cola Website is a live, 3D-focused website experience inspired by Coca-Cola.",
+    "challenge": "The project brings a 3D visual direction into an interactive web experience.",
+    "solution": "Explore the live site to experience the 3D presentation.",
+    "highlights": [
+      "3D-focused website experience",
+      "Live interactive project"
+    ],
+    "metrics": [],
+    "liveUrl": "https://cola3djamalism.vercel.app/hero.html",
+    "cover": "/projects/3d-cola-website/cola3d-B5wEWyMW.webp",
+    "gallery": [
+      {
+        "url": "/projects/3d-cola-website/gallery/01-01.webp",
+        "caption": "Hero: scroll-driven 3D can"
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/02-03.webp",
+        "caption": "\"A signature written in motion\""
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/03-04.webp",
+        "caption": "Story timeline: from a pharmacist's curiosity to the contour bottle"
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/04-07.webp",
+        "caption": "Anatomy section: the contour and the fizz"
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/05-08.webp",
+        "caption": "Slogan marquee"
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/06-09.webp",
+        "caption": "Makers credits"
+      },
+      {
+        "url": "/projects/3d-cola-website/gallery/07-10.webp",
+        "caption": "Closing call to action and footer"
+      }
+    ]
+  }
+]

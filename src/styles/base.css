@@ -1,0 +1,159 @@
+/* Design system
+   Titles: Montserrat · Body: DM Sans · White #F1F1F1 · Black #141414
+   Root font-size is tied to viewport width so the 1920x1080 design scales
+   proportionally: 1rem = 20px at 1920px wide. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --white: #f1f1f1;
+  --black: #141414;
+  --lime: #c9f36a; /* only used inside folder art + the LLAMAAAJ case study */
+  --font-title: 'Montserrat Variable', 'Montserrat', system-ui, sans-serif;
+  --font-body: 'DM Sans Variable', 'DM Sans', system-ui, sans-serif;
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+html {
+  font-size: clamp(11px, 1.0417vw, 22px);
+  -webkit-text-size-adjust: 100%;
+}
+
+@media (max-width: 1024px) {
+  html {
+    font-size: 15px;
+  }
+}
+
+body {
+  margin: 0;
+  background: var(--white);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.3;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: hidden;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  color: inherit;
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+p {
+  margin: 0;
+}
+
+:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Lenis */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+main {
+  display: block;
+  min-height: 100vh;
+  min-height: 100svh;
+}
+
+/* Typewriter: text is hidden until JS has split it, so there is no flash */
+.js [data-tw] {
+  visibility: hidden;
+}
+.tw-word {
+  display: inline-block;
+  white-space: nowrap;
+}
+.tw-char {
+  opacity: 0;
+}
+.tw-char.is-caret {
+  box-shadow: 0.08em 0 0 0 currentColor;
+}
+
+/* elements animated in by JS start hidden (only when JS is running) */
+.js [data-figure],
+.js [data-tool],
+.js .folder,
+.js [data-reveal] {
+  opacity: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .js [data-tw] {
+    visibility: visible;
+  }
+  .js [data-figure],
+  .js [data-tool],
+  .js .folder,
+  .js [data-reveal] {
+    opacity: 1;
+  }
+  .tw-char {
+    opacity: 1;
+  }
+}
+
+/* smoother scrolling: skip layout/paint for far-off sections, GPU-promote pinned UI */
+.bg-sec,
+.fs-sec {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 40rem;
+}
+.ring,
+.cursor-tag {
+  will-change: transform;
+}
+

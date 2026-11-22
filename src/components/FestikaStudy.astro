@@ -1,0 +1,59 @@
+---
+// Detail page for Festika 8: one titled row per deliverable type (swipe / drag).
+// The brand guideline slides are shared with the Brand Guidelines (ALL) page.
+import sections from '../data/festika.json';
+import brands from '../data/brandguidelines.json';
+
+const bg = brands.find((b) => b.slug === 'festika')!;
+const all = [
+  {
+    id: 'brand-guidelines',
+    title: 'Brand Guidelines',
+    dark: false,
+    single: false,
+    tall: false,
+    images: bg.images.map((i) => ({ ...i, w: 1300, h: 918 })).map(({ src, alt, w, h }) => ({ src, alt, w, h })),
+  },
+  ...sections,
+];
+---
+
+{
+  all.map((s) => (
+    <section class:list={['fs-sec', { 'fs-sec--dark': s.dark }]}>
+      <h2 class:list={['bg-title', { 'fs-title--center': s.single }]} data-reveal>{s.title}</h2>
+      {s.single ? (
+        <figure class="fs-single" data-reveal>
+          <img src={s.images[0].src} alt={s.images[0].alt} width={s.images[0].w} height={s.images[0].h} loading="lazy" decoding="async" />
+        </figure>
+      ) : s.grid ? (
+        <div class="fs-grid" data-reveal>
+          {s.images.map((im) => (
+            <img src={im.src} alt={im.alt} width={im.w} height={im.h} loading="lazy" decoding="async" />
+          ))}
+        </div>
+      ) : (
+        <div
+          class:list={['bg-row', 'fs-row', { 'fs-row--tall': s.tall }]}
+          data-drag
+          data-lenis-prevent-wheel
+          tabindex="0"
+          aria-label={`${s.title}. Scroll sideways to browse.`}
+        >
+          {s.images.map((im) => (
+            <img
+              class:list={{ 'fs-wide': im.w / im.h > 4 }}
+              src={im.src}
+              alt={im.alt}
+              width={im.w}
+              height={im.h}
+              loading="lazy"
+              decoding="async"
+              draggable="false"
+            />
+          ))}
+        </div>
+      )}
+    </section>
+  ))
+}

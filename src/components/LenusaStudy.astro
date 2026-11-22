@@ -1,0 +1,55 @@
+---
+// Detail page for the Lenusa internship: intro, a scroll-driven journey timeline, optional gallery.
+import { lenusa } from '../data/lenusa';
+---
+
+<section class="cs-sec">
+  <div class="cs-wrap ln-about" data-reveal>
+    <h2 class="ln-h2">What I do here?</h2>
+    {lenusa.about.map((p) => <p>{p}</p>)}
+  </div>
+</section>
+
+<section class="cs-sec cs-sec--dark ln-journey">
+  <div class="cs-wrap">
+    <h2 class="ln-h2" data-reveal>My journey</h2>
+    <p class="ln-sub" data-reveal>{lenusa.journeySub}</p>
+    <div class="ln-list" data-timeline>
+      <span class="ln-line" aria-hidden="true"><span class="ln-fill" data-ln-fill></span></span>
+      <ol class="ln-steps">
+      {
+        lenusa.steps.map((s, i) => (
+          <li class="ln-step" data-ln-step>
+            <span class="ln-dot" aria-hidden="true" data-ln-dot></span>
+            <div class="ln-text" data-ln-text>
+              <span class="ln-num">{String(i + 1).padStart(2, '0')}</span>
+              <h3>{s.title}</h3>
+              <p>{s.text}</p>
+              <ul class="ln-tags">{s.tags.map((t) => <li>{t}</li>)}</ul>
+            </div>
+            <figure class="ln-media" data-ln-media>
+              <img src={s.img} alt={s.alt} width="760" height="400" loading="lazy" decoding="async" />
+            </figure>
+          </li>
+        ))
+      }
+      </ol>
+    </div>
+  </div>
+</section>
+
+{
+  lenusa.gallery.length > 0 && (
+    <section class="cs-sec">
+      <div class="cs-wrap">
+        <h2 class="ln-h2" data-reveal>Gallery</h2>
+        <p class="ln-sub" data-reveal>Selected things I made while working at Lenusa.</p>
+        <div class="fs-grid ln-gallery" data-reveal>
+          {lenusa.gallery.map((g) => <img src={g.src} alt={g.alt} loading="lazy" decoding="async" />)}
+        </div>
+      </div>
+    </section>
+  )
+}
+
+<p class="ln-foot" data-reveal>{lenusa.footer}</p>

@@ -1,0 +1,232 @@
+---
+// Same layout as LlamaaajStudy, driven by data (src/data/studies.ts).
+import type { LogoStudy, Sym } from '../data/studies';
+
+const { s } = Astro.props as { s: LogoStudy };
+const t = s.theme;
+const vars = `--ls-dark:${t.dark};--ls-tile-bg:${t.tileBg};--ls-tile-ink:${t.tileInk};--ls-tint:${t.tint};--ls-hl:${t.highlight};--ls-wm-font:${t.wmFont};--ls-wm-track:${t.wmTrack}`;
+const [hSym, hTxt, sSym, sTxt, symTile, wmTile] = s.tiles;
+const tileRows = [
+  { variant: 'black', label: 'Black' },
+  { variant: 'white', label: 'White' },
+  { variant: 'colour', label: 'Colour' },
+];
+const svg = (sym: Sym, width: string) =>
+  `<svg class="mark" viewBox="${sym.vb}" style="width:${width}" aria-hidden="true" focusable="false">${sym.body}</svg>`;
+const wm = (size: string) => `<span class="wm" style="--wm:${size}">${s.name}</span>`;
+---
+
+<div class="ls" style={vars}>
+  <!-- Brand Snapshot -->
+  <section class="cs-sec">
+    <div class="cs-wrap cs-wrap--narrow" data-reveal>
+      <h2 class="cs-h2 cs-h2--rule">Brand Snapshot</h2>
+      <table class="cs-table">
+        <thead><tr><th>Field</th><th>Direction</th></tr></thead>
+        <tbody>{s.snapshot.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody>
+      </table>
+      <p class="cs-fine">{s.snapshotNote}</p>
+    </div>
+  </section>
+
+  <!-- Lockup matrix -->
+  <section class="cs-sec cs-sec--dark" aria-label="Logo lockups">
+    <div class="cs-tiles">
+      {
+        tileRows.map((r) => (
+          <>
+            <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+              <div class="cs-lockup" style="gap:1.6rem" set:html={svg(s.symbol, hSym) + wm(hTxt)} />
+              <figcaption>Primary lockup (horizontal) — {r.label}</figcaption>
+            </figure>
+            <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+              <div class="cs-lockup cs-lockup--stack" set:html={svg(s.symbol, sSym) + wm(sTxt)} />
+              <figcaption>Stacked lockup — {r.label}</figcaption>
+            </figure>
+            <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+              <Fragment set:html={svg(s.symbol, symTile)} />
+              <figcaption>Symbol — {r.label}</figcaption>
+            </figure>
+            <figure class={`cs-tile cs-tile--${r.variant}`} data-reveal style="margin:0">
+              <Fragment set:html={wm(wmTile)} />
+              <figcaption>Wordmark — {r.label}</figcaption>
+            </figure>
+          </>
+        ))
+      }
+    </div>
+  </section>
+
+  <!-- Brand Strategy -->
+  <section class="cs-sec">
+    <div class="cs-wrap">
+      <h2 class="cs-h2" data-reveal>Brand Strategy</h2>
+      <div class="cs-strategy">
+        <div data-reveal>
+          <p class="cs-label">Central idea</p>
+          <p class="cs-idea">{s.idea}</p>
+          <div class="cs-cards">
+            {
+              s.cards.map(([n, h, d]) => (
+                <div class="cs-card">
+                  <h3>
+                    {n}&nbsp;&nbsp;{h}
+                  </h3>
+                  <p>{d}</p>
+                </div>
+              ))
+            }
+          </div>
+          <div class="cs-promise">
+            <p class="cs-label">Brand promise</p>
+            <p>{s.promise}</p>
+          </div>
+        </div>
+        <aside class="cs-principles" data-reveal>
+          <h3>Design principles</h3>
+          <ul>{s.principles.map((p) => <li>• {p}</li>)}</ul>
+          <p class="cs-shared">Shared: minimalist · flat · scalable · monochrome-first</p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Logo Architecture -->
+  <section class="cs-sec cs-sec--dark">
+    <div class="cs-wrap">
+      <h2 class="cs-h2" data-reveal>Logo Architecture</h2>
+      <div class="cs-arch">
+        <table class="cs-table cs-table--plain cs-table--small" data-reveal>
+          <thead><tr><th>Type</th><th>Verdict</th><th>Reason</th></tr></thead>
+          <tbody>{s.architecture.map(([a, b, c]) => <tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>
+        </table>
+        <div data-reveal>
+          <figure class="cs-preview" style="margin:0">
+            <div class="cs-lockup" style="gap:2.5rem" set:html={svg(s.symbol, s.preview[0]) + wm(s.preview[1])} />
+            <figcaption>
+              Primary lockup: symbol + wordmark (combination mark) — shown in black as a first-pass monochrome study
+            </figcaption>
+          </figure>
+          <p class="cs-arch-note">
+            {s.idea}<br />
+            The symbol is built to work alone (avatar / icon / stamp); the wordmark must work alone on signage and documents.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Concept Exploration -->
+  <section class="cs-sec">
+    <div class="cs-wrap">
+      <h2 class="cs-h2" data-reveal>Concept Exploration</h2>
+      <div class="cs-concepts">
+        {
+          s.concepts.map((c) => (
+            <div class="cs-concept" data-reveal>
+              <h3>{c.title}</h3>
+              <div class="cs-concept__big">
+                {c.wordmarkFirst ? (
+                  <div class="cs-lockup cs-lockup--stack" set:html={svg(c.sym, c.big) + wm('2rem')} />
+                ) : (
+                  <Fragment set:html={svg(c.sym, c.big)} />
+                )}
+              </div>
+              <div class="cs-concept__dark">
+                <small>White on black</small>
+                {!c.wordmarkFirst && <Fragment set:html={svg(c.sym, c.dark)} />}
+                <div class="cs-lockup" style="gap:0.8rem" set:html={svg(c.sym, c.darkSmall) + wm('1.1rem')} />
+              </div>
+              <div class="cs-concept__small">
+                <h4>Small-size check (black)</h4>
+                <div class="cs-sizes">
+                  {[64, 32, 24, 16].map((px) => (
+                    <div>
+                      <Fragment set:html={svg(c.sym, `${px * 0.62}px`)} />
+                      <span>{px} px</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div class="cs-concept__route">
+                <h4>{c.route}</h4>
+                <p>{c.desc}</p>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </section>
+
+  <!-- Selected Concept -->
+  <section class="cs-sec cs-sec--dark">
+    <h2 class="cs-h2" data-reveal>Selected Concept</h2>
+    <div class="cs-selected">
+      <div class="cs-selected__sym" data-reveal set:html={svg(s.symbol, s.selected.big)} />
+      <div data-reveal>
+        <div class="cs-selected__lime">
+          <div class="cs-lockup" style="gap:1.9rem" set:html={svg(s.symbol, s.selected.lockup[0]) + wm(s.selected.lockup[1])} />
+        </div>
+        <h3>{s.selected.title}</h3>
+        <p>{s.selected.text}</p>
+        <p class="cs-next">
+          Next: build on a modular grid, correct optically, test small sizes, then apply colour only after the monochrome
+          version is approved.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Design System -->
+  <section class="cs-sec">
+    <div class="cs-wrap cs-wrap--narrow">
+      <h2 class="cs-h2" data-reveal>Design System</h2>
+
+      <h3 class="cs-ds-label" data-reveal>Typography</h3>
+      <div class="cs-specimen" data-reveal>{s.name}</div>
+      <div class="cs-type" data-reveal>
+        <table class="cs-table">
+          <tbody>{s.typeRows.map(([k, v]) => <tr><td>{k}</td><td>{v}</td></tr>)}</tbody>
+        </table>
+        <div>
+          <h4>Kerning / refinement status</h4>
+          <p class="cs-type__note">{s.kerning}</p>
+          <p class="cs-type__sample" style={`font-family:${s.sampleFont}`}>Aa Bb Cc 0123456789</p>
+          <p>Supporting text sample — The quick brown fox jumps over the lazy dog.</p>
+        </div>
+      </div>
+
+      <h3 class="cs-ds-label" style="margin-top:4rem" data-reveal>Color System</h3>
+      <div class="cs-swatches" data-reveal>
+        {
+          s.swatches.map((w) => (
+            <div class="cs-swatch" style={`background:${w.hex};color:${w.fg}${w.border ? '' : `;border-color:${w.hex}`}`}>
+              <h4>{w.name}</h4>
+              <p class="role">{w.role}</p>
+              <p class="codes">
+                {w.hex}
+                <br />
+                RGB {w.rgb}
+                <br />
+                CMYK≈ {w.cmyk}
+              </p>
+            </div>
+          ))
+        }
+      </div>
+      <p class="cs-fine">CMYK values are a naive conversion for handoff only — verify with a print provider. No Pantone values are specified.</p>
+
+      <div class="cs-contrast" data-reveal>
+        <table class="cs-table">
+          <thead><tr><th>Pairing (computed WCAG contrast)</th><th>Ratio</th><th>Result</th></tr></thead>
+          <tbody>{s.contrast.map(([a, b, c]) => <tr><td>{a}</td><td>{b}</td><td>{c}</td></tr>)}</tbody>
+        </table>
+        <p>
+          Colour is applied only after the black / white versions were approved. The symbol never depends on colour to be
+          understood.
+        </p>
+      </div>
+    </div>
+  </section>
+</div>

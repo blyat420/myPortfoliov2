@@ -1,0 +1,60 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import LlamaaajStudy from '../../components/LlamaaajStudy.astro';
+import LogoStudy from '../../components/LogoStudy.astro';
+import SystemStudy from '../../components/SystemStudy.astro';
+import CarouselStudy from '../../components/CarouselStudy.astro';
+import BrandStudy from '../../components/BrandStudy.astro';
+import FestikaStudy from '../../components/FestikaStudy.astro';
+import LenusaStudy from '../../components/LenusaStudy.astro';
+import { projects, type Project } from '../../data/site';
+import { studies } from '../../data/studies';
+
+export function getStaticPaths() {
+  return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
+}
+
+const { project } = Astro.props as { project: Project };
+const study = studies[project.slug];
+const siblings = projects.filter((p) => p.folder === project.folder);
+const next = siblings[(siblings.indexOf(project) + 1) % siblings.length];
+const nextName = next.title.replace(/^.*? - /, '');
+---
+
+<Layout title={`${project.title} — LLAMAAAJ`} namespace="detail" description={project.description}>
+  <article class="cs">
+    <header class="cs-head" data-reveal>
+      <h1>{project.title.replace(' - ', ' – ')}</h1>
+      <p>{project.description}</p>
+      {project.slug === 'llamaaaj' && <small>LLAMAAAJ — Logo Identity Study</small>}
+      {study && <small>{study.name} — Logo Identity Study</small>}
+      {project.system && <small>{project.system.categoryLabel}</small>}
+    </header>
+
+    {
+      project.slug === 'game-news' ? (
+        <CarouselStudy />
+      ) : project.slug === 'brand-guidelines' ? (
+        <BrandStudy />
+      ) : project.slug === 'festika-8' ? (
+        <FestikaStudy />
+      ) : project.slug === 'lenusa' ? (
+        <LenusaStudy />
+      ) : project.system ? (
+        <SystemStudy s={project.system} />
+      ) : study ? (
+        <LogoStudy s={study} />
+      ) : (
+        <LlamaaajStudy />
+      )
+    }
+
+    {
+      next !== project && (
+        <div class="cs-next-project">
+          <a href={`/projects/${next.slug}`}>Next project: {nextName} →</a>
+        </div>
+      )
+    }
+  </article>
+</Layout>

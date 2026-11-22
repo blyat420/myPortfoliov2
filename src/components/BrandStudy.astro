@@ -1,0 +1,28 @@
+﻿---
+// Detail page for Brand Guidelines (ALL): one swipeable row per brand.
+import fs from 'node:fs';
+import path from 'node:path';
+import brands from '../data/brandguidelines.json';
+
+// "Download PDF" only shows when public/projects/brand-guidelines/<slug>.pdf exists
+const hasPdf = (slug: string) => fs.existsSync(path.resolve(process.cwd(), 'public/projects/brand-guidelines', `${slug}.pdf`));
+---
+
+{
+  brands.map((b, i) => (
+    <section class={`bg-sec${i % 2 ? ' bg-sec--dark' : ''}`}>
+      <h2 class="bg-title" data-reveal>{b.title}</h2>
+      <div class="bg-row" data-drag data-lenis-prevent-wheel tabindex="0" aria-label={`${b.title} slides. Scroll sideways to browse.`}>
+        {b.images.map((im) => (
+          <img src={im.src} alt={im.alt} width="1300" height="918" loading="lazy" decoding="async" draggable="false" />
+        ))}
+      </div>
+      {hasPdf(b.slug) && (
+        <a class="bg-pdf" href={`/projects/brand-guidelines/${b.slug}.pdf`} download>
+          Download PDF
+        </a>
+      )}
+    </section>
+  ))
+}
+

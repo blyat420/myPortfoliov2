@@ -1,0 +1,27 @@
+---
+// Renders your logo (from logo.svg) as inline SVG that takes the text colour.
+import { SYMBOL_PATH, SYMBOL_ACCENT, SYMBOL_BOX, WORDMARK_PATH, WORDMARK_BOX } from '../data/logo';
+
+interface Props {
+  kind: 'symbol' | 'wordmark';
+  width: string; // CSS width, e.g. "3.25rem"
+  accent?: boolean; // fill the knocked-out square with electric lime
+}
+const { kind, width, accent = false } = Astro.props;
+const box = kind === 'symbol' ? SYMBOL_BOX : WORDMARK_BOX;
+---
+
+<svg
+  class="mark"
+  viewBox={`${box.x} ${box.y} ${box.w} ${box.h}`}
+  style={`width:${width}`}
+  aria-hidden="true"
+  focusable="false"
+>
+  {kind === 'symbol' ? <path d={SYMBOL_PATH} /> : <path d={WORDMARK_PATH} />}
+  {
+    kind === 'symbol' && accent && (
+      <rect class="accent" x={SYMBOL_ACCENT.x} y={SYMBOL_ACCENT.y} width={SYMBOL_ACCENT.w} height={SYMBOL_ACCENT.h} />
+    )
+  }
+</svg>
