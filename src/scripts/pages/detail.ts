@@ -67,8 +67,23 @@ export function mountDetail(c: HTMLElement): PageHandle {
     showNav(0.4);
   }, c);
 
-  // mouse drag-to-scroll for slide rows (touch / trackpad scroll natively)
   const ac = new AbortController();
+
+  // gallery images load lazily and have no fixed size: re-measure scroll triggers as they arrive
+  let refreshTimer = 0;
+  const refreshSoon = () => {
+    clearTimeout(refreshTimer);
+    refreshTimer = window.setTimeout(() => ScrollTrigger.refresh(), 150);
+  };
+  c.querySelectorAll<HTMLImageElement>('img').forEach((img) => {
+    if (!img.complete) img.addEventListener('load', refreshSoon, { once: true, signal: ac.signal });
+  });
+
+  // live demo viewer (System projects): the site loads only when opened, and unloads on close
+  const demo = c.querySelector<HTMLDialogElement>('[data-demo]');
+  if (demo) initDemo(c, demo, ac.signal);
+
+  // mouse drag-to-scroll for slide rows (touch / trackpad scroll natively)
   c.querySelectorAll<HTMLElement>('[data-drag]').forEach((row) => {
     let x0 = 0;
     let s0 = 0;
@@ -94,8 +109,60 @@ export function mountDetail(c: HTMLElement): PageHandle {
 
   return {
     destroy() {
+      clearTimeout(refreshTimer);
+      if (demo?.open) demo.close();
       ac.abort();
       ctx.revert();
     },
   };
+}
+
+function initDemo(c: HTMLElement, dlg: HTMLDialogElement, signal: AbortSignal) {
+  const frame = dlg.querySelector<HTMLIFrameElement>('[data-demo-frame]')!;
+  const full = dlg.querySelector<HTMLButtonElement>('[data-demo-full]');
+  const src = frame.dataset.src!;
+
+  const load = () => {
+    dlg.classList.add('is-loading');
+    frame.src = src;
+  };
+  frame.addEventListener('load', () => dlg.classList.remove('is-loading'), { signal });
+
+  c.querySelectorAll<HTMLElement>('[data-demo-open]').forEach((btn) =>
+    btn.addEventListener(
+      'click',
+      () => {
+        dlg.showModal();
+        load();
+      },
+      { signal }
+    )
+  );
+  dlg.querySelector('[data-demo-close]')?.addEventListener('click', () => dlg.close(), { signal });
+  dlg.querySelector('[data-demo-reload]')?.addEventListener('click', load, { signal });
+  full?.addEventListener(
+    'click',
+    () => {
+      const on = dlg.classList.toggle('is-max');
+      full.setAttribute('aria-pressed', String(on));
+    },
+    { signal }
+  );
+  // click on the dimmed area around the frame closes it
+  dlg.addEventListener(
+    'click',
+    (e) => {
+      if (e.target === dlg) dlg.close();
+    },
+    { signal }
+  );
+  // stop the demo (audio, timers, network) when it is closed
+  dlg.addEventListener(
+    'close',
+    () => {
+      frame.src = 'about:blank';
+      dlg.classList.remove('is-loading', 'is-max');
+    },
+    { signal }
+  );
 }

@@ -1,5 +1,87 @@
 [
   {
+    "slug": "lenusa-website",
+    "title": "Lenusa.id Website",
+    "subtitle": "Company Website untuk Konsultasi Pertambangan, Software, dan Pelatihan",
+    "categoryLabel": "Corporate Website",
+    "year": "2026",
+    "client": "PT Lenusa Konsultan Indonesia",
+    "role": "Web Designer & Frontend Developer",
+    "tools": [
+      "HTML",
+      "CSS",
+      "JavaScript",
+      "Vercel"
+    ],
+    "overview": "Lenusa.id adalah website perusahaan untuk PT Lenusa Konsultan Indonesia, konsultan pertambangan yang bergerak di bidang geoteknik dan hidrogeologi. Situs ini memperkenalkan layanan konsultasi, izin air tanah, penjualan software teknis seperti Seequent, Waterloo Hydrogeologic, dan Westbay, serta pelatihan dan sertifikasi profesi pertambangan.",
+    "challenge": "Tantangannya adalah menyatukan banyak jenis konten, yaitu layanan, katalog software, jadwal pelatihan, dan artikel teknis, dalam satu situs yang tetap mudah dipahami oleh klien tambang maupun peserta pelatihan. Seluruh halaman juga harus tersedia dalam bahasa Indonesia dan Inggris.",
+    "solution": "Website dibangun sebagai situs statis yang ringan dengan halaman detail dinamis untuk pelatihan, software, artikel, dan portofolio. Navigasi dibuat sederhana, formulir kontak dan tombol WhatsApp selalu mudah dijangkau, dan situs diaudit untuk performa, aksesibilitas, SEO, serta keamanan sebelum dirilis di Vercel.",
+    "highlights": [
+      "Dua Bahasa: Pergantian bahasa Indonesia dan Inggris di seluruh halaman dengan satu tombol",
+      "Katalog Layanan: Konsultasi geoteknik dan hidrogeologi, izin air tanah, software, dan pelatihan dalam satu situs",
+      "Halaman Detail Dinamis: Template tunggal untuk detail pelatihan, software, artikel, dan portofolio",
+      "Siap Produksi: Audit performa, aksesibilitas, SEO, dan keamanan sebelum rilis, dengan build khusus untuk deployment"
+    ],
+    "metrics": [
+      {
+        "label": "Halaman",
+        "value": "13"
+      },
+      {
+        "label": "Pelatihan",
+        "value": "32 Program"
+      },
+      {
+        "label": "Bahasa",
+        "value": "ID & EN"
+      },
+      {
+        "label": "Hosting",
+        "value": "Vercel"
+      }
+    ],
+    "liveUrl": "https://lenusaid.vercel.app",
+    "cover": "/projects/lenusa-website/cover.webp",
+    "gallery": [
+      {
+        "url": "/projects/lenusa-website/gallery/01-home.webp",
+        "caption": "Beranda: hero layanan konsultasi pertambangan geoteknik dan hidrogeologi"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/02-home-services.webp",
+        "caption": "Beranda: ringkasan layanan, software, dan pelatihan"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/03-about.webp",
+        "caption": "Tentang Kami: profil dan keahlian tim Lenusa"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/04-consulting.webp",
+        "caption": "Konsultasi: layanan geoteknik dan hidrogeologi tambang"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/05-software.webp",
+        "caption": "Software: Seequent, Waterloo Hydrogeologic, dan Westbay"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/06-training.webp",
+        "caption": "Pelatihan: pelatihan pertambangan dan sertifikasi profesi"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/07-training-detail.webp",
+        "caption": "Detail pelatihan dengan jadwal dan informasi pendaftaran"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/08-groundwater.webp",
+        "caption": "Izin air tanah dan kepatuhan regulasi"
+      },
+      {
+        "url": "/projects/lenusa-website/gallery/09-article.webp",
+        "caption": "Artikel: insight teknis seputar pertambangan"
+      }
+    ]
+  },
+  {
     "slug": "jamalpos",
     "title": "JamalPOS",
     "subtitle": "Point of Sale (POS) dan Inventory Management System",

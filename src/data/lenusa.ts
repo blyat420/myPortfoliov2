@@ -1,5 +1,7 @@
-﻿// Lenusa internship page content. Add gallery images (src + alt) later: the section stays hidden while it is empty.
+// Lenusa internship page content. The gallery section stays hidden while it has no groups.
 export const lenusa = {
+  aboutTitle: 'What I do here?',
+  gallerySub: 'Selected things I made while working at Lenusa.',
   about: [
     "While I'm here, I've learned a lot. Back to basics: not just mindlessly making design like I did before, I learned the basics of graphic design, such as hierarchy, balance, typography, etc.",
     'In my time here, I managed visual brand identity at PT Lenusa Konsultan Indonesia by strictly enforcing brand guidelines across all corporate touchpoints. Collaborated cross-functionally to design professional presentation decks, comprehensive training booklets, promotional posters, and engaging social media infographics, ensuring meticulous visual consistency and high-quality communication across both print and digital surfaces.',
@@ -13,6 +15,94 @@ export const lenusa = {
     { title: 'Posters and merchandise', text: 'I made promotional posters and merchandise for Lenusa International Training 2027, with a pattern set carried across posters and tote bag colourways.', tags: ['Posters', 'Merchandise', 'Pattern'], img: '/projects/lenusa/card-05-merch.webp', alt: 'Lenusa International Training 2027 tote bag colourways' },
     { title: 'From brand to web', text: 'I designed pages for the Lenusa.id website, the 2027 training schedule and software product pages, turning the brand into a responsive website experience.', tags: ['Website', 'Schedule', 'Product pages'], img: '/projects/lenusa/card-06-web.webp', alt: 'Lenusa.id website and the 2027 public training schedule' },
   ],
-  gallery: [] as { src: string; alt: string }[],
+  gallery: [
+    {
+      title: 'Social media posts',
+      note: 'Educational and awareness posts for Lenusa and Litologi social channels.',
+      cols: 3,
+      ratio: '4 / 5',
+      items: [
+        { src: '/projects/lenusa/gallery/posts-01.webp', alt: 'Post about incidents that happen on site, with a haul truck' },
+        { src: '/projects/lenusa/gallery/posts-02.webp', alt: 'Post about geotechnical services for mines and infrastructure, with a dump truck' },
+        { src: '/projects/lenusa/gallery/posts-03.webp', alt: 'Landslide risk post with 1,277 points along the homecoming route' },
+        { src: '/projects/lenusa/gallery/posts-04.webp', alt: 'Monitoring workflow infographic post' },
+        { src: '/projects/lenusa/gallery/posts-05.webp', alt: 'Instrument monitoring chart post' },
+        { src: '/projects/lenusa/gallery/posts-06.webp', alt: 'Open pit post about early signs of slope movement' },
+      ],
+    },
+    {
+      title: 'Event greetings',
+      note: 'Story-format greetings for national and religious days.',
+      cols: 3,
+      ratio: '9 / 16',
+      items: [
+        { src: '/projects/lenusa/gallery/greetings-01.webp', alt: 'Maulid Nabi Muhammad SAW greeting story' },
+        { src: '/projects/lenusa/gallery/greetings-02.webp', alt: 'Hari Kesaktian Pancasila greeting story' },
+        { src: '/projects/lenusa/gallery/greetings-03.webp', alt: 'Hari Sumpah Pemuda greeting story' },
+      ],
+    },
+    {
+      title: 'Training posters and booklet',
+      note: 'Posters, booklet cover and proposal template for in-house and public training.',
+      cols: 4,
+      ratio: '707 / 1000',
+      items: [
+        { src: '/projects/lenusa/gallery/posters-01.webp', alt: 'Mechanical Maintenance for Reliable Equipment Operation poster' },
+        { src: '/projects/lenusa/gallery/posters-02.webp', alt: 'Booklet Training Litologi by Lenusa cover' },
+        { src: '/projects/lenusa/gallery/posters-03.webp', alt: 'Slope discontinuity assessment training poster' },
+        { src: '/projects/lenusa/gallery/posters-04.webp', alt: 'Groundwater Modeling Training proposal template' },
+      ],
+    },
+    {
+      title: 'Training slides',
+      note: 'Opening, rundown, facilitator and post-test slides for in-house training.',
+      cols: 3,
+      ratio: '16 / 9',
+      items: [
+        { src: '/projects/lenusa/gallery/slides-01.webp', alt: 'Mining Geotechnics in-house training opening slide' },
+        { src: '/projects/lenusa/gallery/slides-02.webp', alt: 'Groundwater modeling in-house training opening slide' },
+        { src: '/projects/lenusa/gallery/slides-03.webp', alt: 'Training rundown slide' },
+        { src: '/projects/lenusa/gallery/slides-04.webp', alt: 'Main facilitator profile slide' },
+        { src: '/projects/lenusa/gallery/slides-05.webp', alt: 'Online training speaker slide' },
+        { src: '/projects/lenusa/gallery/slides-06.webp', alt: 'Post-test training slide with QR code' },
+      ],
+    },
+    {
+      title: 'Reports',
+      note: 'Training reports with a cover system that can be reused for the next one.',
+      cols: 4,
+      ratio: '707 / 1000',
+      items: [
+        { src: '/projects/lenusa/gallery/reports-01.webp', alt: 'External training report cover with a faded aerial mine photo' },
+        { src: '/projects/lenusa/gallery/reports-02.webp', alt: 'External training report cover with a portrait and mine photos' },
+        { src: '/projects/lenusa/gallery/reports-03.webp', alt: 'In-house training and certification report cover' },
+        { src: '/projects/lenusa/gallery/reports-04.webp', alt: 'In-house report cover with an aerial mine photo' },
+      ],
+    },
+    {
+      title: 'Brand assets',
+      note: 'Plan. Develop. Deliver. covers and the Lenusa sticker pack.',
+      cols: 4,
+      ratio: '707 / 1000',
+      items: [
+        { src: '/projects/lenusa/gallery/brand-01.webp', alt: 'Plan. Develop. Deliver. cover, light' },
+        { src: '/projects/lenusa/gallery/brand-02.webp', alt: 'Plan. Develop. Deliver. cover, dark' },
+        { src: '/projects/lenusa/gallery/brand-03.webp', alt: 'Lenusa sticker pack, green colourway' },
+        { src: '/projects/lenusa/gallery/brand-04.webp', alt: 'Lenusa sticker pack, orange colourway' },
+      ],
+    },
+    {
+      title: 'Pattern set',
+      note: 'Tagline and icon patterns in light and dark.',
+      cols: 2,
+      ratio: '2440 / 842',
+      items: [
+        { src: '/projects/lenusa/gallery/patterns-01.webp', alt: 'Think. Engineer. Advance. pattern, light and dark' },
+        { src: '/projects/lenusa/gallery/patterns-02.webp', alt: 'Understand Earth. Engineer Progress. pattern, light and dark' },
+        { src: '/projects/lenusa/gallery/patterns-03.webp', alt: 'Brand icon pattern, light and dark' },
+        { src: '/projects/lenusa/gallery/patterns-04.webp', alt: 'Brand icon tiles, light and dark' },
+      ],
+    },
+  ] as { title: string; note: string; cols: number; ratio: string; items: { src: string; alt: string; wide?: boolean }[] }[],
   footer: 'PT Lenusa Konsultan Indonesia  |  Graphic Design Intern',
 };

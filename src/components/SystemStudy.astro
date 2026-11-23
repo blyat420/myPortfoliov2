@@ -16,6 +16,11 @@ const liveLabel = s.liveUrl.includes('instagram.com')
   : s.liveUrl.includes('github.com')
     ? 'View on GitHub'
     : 'Open live site';
+// social / code-host pages refuse to load inside a frame, so only real sites get the embedded demo
+const canEmbed = !/instagram\.com|github\.com/.test(s.liveUrl);
+const live = new URL(s.liveUrl);
+const liveDisplay = live.host + (live.pathname === '/' ? '' : live.pathname);
+const liveHost = live.hostname.endsWith('vercel.app') ? 'Hosted on Vercel' : live.hostname;
 ---
 
 <section class="cs-wrap sy-meta" data-reveal>
@@ -25,8 +30,78 @@ const liveLabel = s.liveUrl.includes('instagram.com')
     <div><dt>Role</dt><dd>{s.role}</dd></div>
     <div><dt>Tools</dt><dd>{s.tools.join(' · ')}</dd></div>
   </dl>
-  <a class="sy-live" href={s.liveUrl} target="_blank" rel="noopener">{liveLabel} ↗</a>
+  <div class="sy-actions">
+    {
+      canEmbed && (
+        <button class="sy-live sy-live--primary" type="button" data-demo-open aria-haspopup="dialog">
+          <span class="sy-live__dot" aria-hidden="true" />
+          Launch live demo
+        </button>
+      )
+    }
+    <a class="sy-live" href={s.liveUrl} target="_blank" rel="noopener">{liveLabel} ↗</a>
+  </div>
 </section>
+
+{
+  canEmbed && (
+    <dialog class="demo" data-demo data-lenis-prevent aria-label={`${s.title} live demo`}>
+      <div class="demo__frame">
+        <header class="demo__bar">
+          <span class="demo__dots" aria-hidden="true">
+            <i />
+            <i />
+            <i />
+          </span>
+          <span class="demo__name">
+            {s.title} <small>(Live Website)</small>
+          </span>
+          <span class="demo__url" title={s.liveUrl}>
+            <span class="demo__url-text">{liveDisplay}</span>
+            <b>LIVE</b>
+          </span>
+          <button class="demo__btn demo__btn--icon" type="button" data-demo-reload aria-label="Reload demo">
+            ↻
+          </button>
+          <button class="demo__btn demo__btn--icon" type="button" data-demo-full aria-label="Expand demo" aria-pressed="false">
+            ⤢
+          </button>
+          <a class="demo__btn demo__btn--tab" href={s.liveUrl} target="_blank" rel="noopener">
+            Open in New Tab ↗
+          </a>
+          <button class="demo__btn demo__btn--close" type="button" data-demo-close>
+            Close ✕
+          </button>
+        </header>
+        <div class="demo__view">
+          <iframe
+            data-demo-frame
+            data-src={s.liveUrl}
+            title={`${s.title} live demo`}
+            sandbox="allow-scripts allow-same-origin allow-forms allow-popups allow-modals allow-downloads"
+            referrerpolicy="no-referrer"
+            allow="fullscreen; clipboard-write"
+          />
+          <p class="demo__loading" role="status">
+            Loading live demo…
+          </p>
+        </div>
+        <footer class="demo__foot">
+          <span>
+            <i aria-hidden="true" />
+            Live interactive environment of <b>{s.title}</b>
+          </span>
+          <span>
+            {liveHost} ·{' '}
+            <a href={s.liveUrl} target="_blank" rel="noopener">
+              Direct URL ↗
+            </a>
+          </span>
+        </footer>
+      </div>
+    </dialog>
+  )
+}
 
 <figure class="sy-cover" data-reveal>
   <img src={s.cover} alt={`${s.title} preview`} fetchpriority="high" />

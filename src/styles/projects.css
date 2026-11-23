@@ -187,3 +187,86 @@
     padding: 0 1.5rem;
   }
 }
+
+/* Video folder: portrait reel cards in the same carousel */
+.card--reel {
+  width: auto;
+  height: 22.7rem; /* same height as a 16:9 project card */
+  aspect-ratio: 400 / 710;
+  padding: 0;
+  border: 0;
+  background: #141414;
+}
+.card__play {
+  position: absolute;
+  inset: 50% auto auto 50%;
+  width: 3.2rem;
+  height: 3.2rem;
+  margin: -1.6rem 0 0 -1.6rem;
+  border-radius: 50%;
+  background: rgba(20, 20, 20, 0.55);
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+.card__play::after {
+  content: '';
+  position: absolute;
+  left: 1.25rem;
+  top: 0.95rem;
+  border-style: solid;
+  border-width: 0.65rem 0 0.65rem 1.05rem;
+  border-color: transparent transparent transparent #fff;
+}
+.card--reel.is-active .card__play {
+  opacity: 1;
+}
+.card--reel:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: 3px;
+}
+
+.reel-player {
+  width: min(26rem, calc(100vw - 2rem));
+  max-height: calc(100svh - 2rem);
+  padding: 0;
+  border: 0;
+  border-radius: 0.6rem;
+  background: #fff;
+  overflow: auto;
+}
+.reel-player::backdrop {
+  background: rgba(10, 10, 10, 0.75);
+}
+.reel-player__close {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  min-height: 2.75rem;
+  padding: 0 1rem;
+  background: #fff;
+  border-bottom: 1px solid rgba(20, 20, 20, 0.12);
+  font-family: var(--font-title);
+  font-size: 0.85rem;
+  text-align: right;
+}
+.reel-player__close:focus-visible {
+  outline: 2px solid var(--black);
+  outline-offset: -2px;
+}
+.reel-player .instagram-media {
+  min-width: 0 !important; /* embed.js sets 326px inline; let the dialog size it */
+  width: 100% !important;
+  margin: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  box-shadow: none !important;
+}
+
+@media (max-width: 1024px) {
+  .card--reel {
+    width: 46vw;
+    height: auto;
+  }
+}

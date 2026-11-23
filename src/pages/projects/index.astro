@@ -2,6 +2,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { folders, projects } from '../../data/site';
 import { scribbles } from '../../data/scribble';
+import { reels } from '../../data/videos';
 
 const groups = folders.map((f) => ({ ...f, items: projects.filter((p) => p.folder === f.id) }));
 const loops = scribbles(6);
@@ -41,7 +42,14 @@ const loops = scribbles(6);
             hidden
           >
             <div class="pj__track" data-track>
-              {g.items.length
+              {g.id === 'video'
+                ? reels.map((r) => (
+                    <button class="card card--reel" type="button" data-reel={r.code} data-title={r.title} data-desc={r.meta} aria-label={`Play reel: ${r.title}`}>
+                      <img src={`/projects/videos/reels/${r.code}.webp`} alt={r.alt} width="400" height="710" loading="lazy" draggable="false" />
+                      <span class="card__play" aria-hidden="true"></span>
+                    </button>
+                  ))
+                : g.items.length
                 ? g.items.map((p) => (
                     <a class="card" href={`/projects/${p.slug}`} data-title={p.title} data-desc={p.description}>
                       <img src={p.cover} alt={p.coverAlt} width="1600" height="900" draggable="false" />
@@ -67,4 +75,9 @@ const loops = scribbles(6);
       </div>
     </div>
   </section>
+
+  <dialog class="reel-player" data-reel-player aria-label="Reel player" data-lenis-prevent>
+    <button class="reel-player__close" type="button" data-reel-close>Close</button>
+    <div class="reel-player__body" data-reel-body></div>
+  </dialog>
 </Layout>

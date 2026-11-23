@@ -1,24 +1,25 @@
 ---
-// Detail page for the Lenusa internship: intro, a scroll-driven journey timeline, optional gallery.
+// Journey-style detail page (Lenusa, Random Design): intro, a scroll-driven timeline, optional gallery.
 import { lenusa } from '../data/lenusa';
+const { d = lenusa } = Astro.props as { d?: typeof lenusa };
 ---
 
 <section class="cs-sec">
   <div class="cs-wrap ln-about" data-reveal>
-    <h2 class="ln-h2">What I do here?</h2>
-    {lenusa.about.map((p) => <p>{p}</p>)}
+    <h2 class="ln-h2">{d.aboutTitle}</h2>
+    {d.about.map((p) => <p>{p}</p>)}
   </div>
 </section>
 
 <section class="cs-sec cs-sec--dark ln-journey">
   <div class="cs-wrap">
     <h2 class="ln-h2" data-reveal>My journey</h2>
-    <p class="ln-sub" data-reveal>{lenusa.journeySub}</p>
+    <p class="ln-sub" data-reveal>{d.journeySub}</p>
     <div class="ln-list" data-timeline>
       <span class="ln-line" aria-hidden="true"><span class="ln-fill" data-ln-fill></span></span>
       <ol class="ln-steps">
       {
-        lenusa.steps.map((s, i) => (
+        d.steps.map((s, i) => (
           <li class="ln-step" data-ln-step>
             <span class="ln-dot" aria-hidden="true" data-ln-dot></span>
             <div class="ln-text" data-ln-text>
@@ -39,17 +40,25 @@ import { lenusa } from '../data/lenusa';
 </section>
 
 {
-  lenusa.gallery.length > 0 && (
-    <section class="cs-sec">
+  d.gallery.length > 0 && (
+    <section class="cs-sec ln-gallery">
       <div class="cs-wrap">
-        <h2 class="ln-h2" data-reveal>Gallery</h2>
-        <p class="ln-sub" data-reveal>Selected things I made while working at Lenusa.</p>
-        <div class="fs-grid ln-gallery" data-reveal>
-          {lenusa.gallery.map((g) => <img src={g.src} alt={g.alt} loading="lazy" decoding="async" />)}
-        </div>
+        <h2 class="ln-h2" data-reveal>Selected work</h2>
+        <p class="ln-sub" data-reveal>{d.gallerySub}</p>
+        {d.gallery.map((g) => (
+          <div class="ln-group" data-reveal>
+            <h3>{g.title}</h3>
+            <p class="ln-note">{g.note}</p>
+            <ul class={`ln-grid ln-grid--${g.cols}`} style={`--ratio:${g.ratio}`}>
+              {g.items.map((i) => (
+                <li class={i.wide ? 'ln-wide' : undefined}><img src={i.src} alt={i.alt} loading="lazy" decoding="async" /></li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </section>
   )
 }
 
-<p class="ln-foot" data-reveal>{lenusa.footer}</p>
+<p class="ln-foot" data-reveal>{d.footer}</p>

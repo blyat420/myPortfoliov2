@@ -89,6 +89,14 @@ export const folders: { id: FolderId; label: string; icon: string }[] = [
 // Order = carousel order. First item of a folder is the one centred on open.
 export const projects: Project[] = [
   {
+    slug: 'lenusa',
+    folder: 'graphic',
+    title: 'Lenusa - Graphic Design Intern',
+    description: 'Things I do and make while working as an intern in PT. Lenusa Konsultan Indonesia.',
+    cover: '/projects/lenusa/cover.webp',
+    coverAlt: 'Lenusa.id logo on white',
+  },
+  {
     slug: 'llamaaaj',
     folder: 'graphic',
     title: 'Logo Design - LLAMAAAJ',
@@ -113,6 +121,22 @@ export const projects: Project[] = [
     coverAlt: 'Ibu Hilmi logo on cream',
   },
   {
+    slug: 'random-design',
+    folder: 'graphic',
+    title: 'Random Design',
+    description: 'Carousels, decks, proposals, infographics, characters, stickers and memes that do not fit anywhere else.',
+    cover: '/projects/random-design/cover.webp',
+    coverAlt: 'Me composited into a Minecraft night scene with a creeper and a music player',
+  },
+  {
+    slug: 'festika-8',
+    folder: 'graphic',
+    title: 'Festika 8',
+    description: 'A gallery of what I made for Festika 8 as Creative Team Lead.',
+    cover: '/projects/festika-8/cover.webp',
+    coverAlt: 'Festika logo on white',
+  },
+  {
     slug: 'game-news',
     folder: 'graphic',
     title: 'Instagram Carousel - Game News',
@@ -127,22 +151,6 @@ export const projects: Project[] = [
     description: 'A portfolio Making Brand Guidelines for Business',
     cover: '/projects/brand-guidelines/cover.webp',
     coverAlt: 'Brand guideline cover slides for Litologi, LLAMAAAJ, ALUR and Ibu Hilmi',
-  },
-  {
-    slug: 'festika-8',
-    folder: 'graphic',
-    title: 'Festika 8',
-    description: 'A gallery of what I made for Festika 8 as Creative Team Lead.',
-    cover: '/projects/festika-8/cover.webp',
-    coverAlt: 'Festika logo on white',
-  },
-  {
-    slug: 'lenusa',
-    folder: 'graphic',
-    title: 'Lenusa - Graphic Design Intern',
-    description: 'Things I do and make while working as an intern in PT. Lenusa Konsultan Indonesia.',
-    cover: '/projects/lenusa/cover.webp',
-    coverAlt: 'Lenusa.id logo on white',
   },
   ...systems.map(
     (s): Project => ({

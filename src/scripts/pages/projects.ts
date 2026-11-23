@@ -186,7 +186,7 @@ export function mountProjects(c: HTMLElement): PageHandle {
     });
     cards.forEach((card, k) => {
       card.classList.toggle('is-active', k === idx);
-      if (card.tagName === 'A') card.tabIndex = k === idx ? 0 : -1;
+      if (card.matches('a, button')) card.tabIndex = k === idx ? 0 : -1;
     });
     if (changed || instant) setCaption(changed && !instant);
   }
@@ -216,6 +216,7 @@ export function mountProjects(c: HTMLElement): PageHandle {
       const card = (e.target as HTMLElement).closest<HTMLElement>('.card');
       if (!card) return;
       const k = cards.indexOf(card);
+      if (!dragged && k === idx && card.dataset.reel) return playReel(card);
       if (dragged || k !== idx || card.tagName !== 'A') {
         e.preventDefault();
         e.stopPropagation(); // keep Barba from navigating
@@ -287,15 +288,38 @@ export function mountProjects(c: HTMLElement): PageHandle {
         go(idx - 1);
       } else if (e.key === 'Enter' && e.target === cz) {
         const card = cards[idx];
-        if (card?.tagName === 'A') card.click();
+        if (card?.matches('a, button')) card.click();
       }
     });
   });
 
   on(window, 'resize', () => carousel && !stage.hidden && go(idx, true));
 
+  /* ---------- reel player: Instagram's official embed inside a native <dialog>
+     (Esc, focus trap and focus return come from the platform) ---------- */
+  const player = c.querySelector<HTMLDialogElement>('[data-reel-player]')!;
+  const playerBody = player.querySelector<HTMLElement>('[data-reel-body]')!;
+  function playReel(card: HTMLElement) {
+    const url = `https://www.instagram.com/reel/${card.dataset.reel}/`;
+    playerBody.innerHTML = `<blockquote class="instagram-media" data-instgrm-permalink="${url}" data-instgrm-version="14"><a href="${url}" target="_blank" rel="noopener">Watch this reel on Instagram</a></blockquote>`;
+    player.showModal();
+    const ig = (window as unknown as { instgrm?: { Embeds: { process(): void } } }).instgrm;
+    if (ig) ig.Embeds.process();
+    else if (!document.getElementById('ig-embed')) {
+      const s = document.createElement('script'); // processes every blockquote on load
+      s.id = 'ig-embed';
+      s.async = true;
+      s.src = 'https://www.instagram.com/embed.js';
+      document.body.appendChild(s);
+    }
+  }
+  on(player.querySelector<HTMLElement>('[data-reel-close]')!, 'click', () => player.close());
+  on(player, 'click', (e) => e.target === player && player.close()); // backdrop
+  on(player, 'close', () => (playerBody.innerHTML = '')); // stops playback
+
   return {
     destroy() {
+      if (player.open) player.close();
       folderBtns.forEach(drawOut);
       ac.abort();
       ctx.revert();

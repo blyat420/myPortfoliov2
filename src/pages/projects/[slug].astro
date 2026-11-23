@@ -9,6 +9,7 @@ import FestikaStudy from '../../components/FestikaStudy.astro';
 import LenusaStudy from '../../components/LenusaStudy.astro';
 import { projects, type Project } from '../../data/site';
 import { studies } from '../../data/studies';
+import { randomDesign } from '../../data/randomdesign';
 
 export function getStaticPaths() {
   return projects.map((project) => ({ params: { slug: project.slug }, props: { project } }));
@@ -17,8 +18,10 @@ export function getStaticPaths() {
 const { project } = Astro.props as { project: Project };
 const study = studies[project.slug];
 const siblings = projects.filter((p) => p.folder === project.folder);
-const next = siblings[(siblings.indexOf(project) + 1) % siblings.length];
-const nextName = next.title.replace(/^.*? - /, '');
+const at = siblings.indexOf(project);
+const prev = siblings[at - 1]; // undefined on the first project
+const next = siblings[at + 1]; // undefined on the last project
+const short = (p: Project) => p.title.replace(/^.*? - /, '');
 ---
 
 <Layout title={`${project.title} — LLAMAAAJ`} namespace="detail" description={project.description}>
@@ -40,6 +43,8 @@ const nextName = next.title.replace(/^.*? - /, '');
         <FestikaStudy />
       ) : project.slug === 'lenusa' ? (
         <LenusaStudy />
+      ) : project.slug === 'random-design' ? (
+        <LenusaStudy d={randomDesign} />
       ) : project.system ? (
         <SystemStudy s={project.system} />
       ) : study ? (
@@ -49,12 +54,9 @@ const nextName = next.title.replace(/^.*? - /, '');
       )
     }
 
-    {
-      next !== project && (
-        <div class="cs-next-project">
-          <a href={`/projects/${next.slug}`}>Next project: {nextName} →</a>
-        </div>
-      )
-    }
+    <nav class="cs-next-project" aria-label="More projects">
+      {prev ? <a href={`/projects/${prev.slug}`}>← Previous project: {short(prev)}</a> : <span aria-disabled="true">← Previous project</span>}
+      {next ? <a href={`/projects/${next.slug}`}>Next project: {short(next)} →</a> : <span aria-disabled="true">Next project →</span>}
+    </nav>
   </article>
 </Layout>
